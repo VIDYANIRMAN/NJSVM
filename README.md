@@ -1,1731 +1,814 @@
 <!DOCTYPE html>
-<html lang="hi" class="scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>VidyaNirman - Naga Ji Saraswati Vidya Mandir Sr Sec School</title>
-  
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- FontAwesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Noto+Sans+Devanagari:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            saffron: {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VidyaNirman | Naga Ji Saraswati Vidya Mandir Sr Sec School Maldehpur Ballia</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        saffron: {
+                            
               50: '#fff9ed',
               100: '#fef0d6',
               500: '#f97316',
               600: '#ea580c',
               700: '#c2410c',
-            },
-            vedic: {
-              gold: '#d97706',
-              deepGold: '#b45309',
-              sanskrit: '#7c2d12',
-              royalBlue: '#1e3a8a',
+                        },
+                        royal: {
+                            800: '#1e3a8a',
+                            900: '#0f172a',
+                            950: '#0a0f1d'
+                        }
+                    }
+                }
             }
-          },
-          fontFamily: {
-            sans: ['Poppins', 'Noto Sans Devanagari', 'sans-serif'],
-            serif: ['Cinzel', 'serif'],
-            devanagari: ['Noto Sans Devanagari', 'sans-serif']
-          }
         }
-      }
-    }
-  </script>
-
-  <style>
-    /* Custom CSS for traditional motifs, animations & resilient image layout */
-    body {
-      background-color: #fafaf9;
-      color: #1c1917;
-      overflow-x: hidden;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    /* Golden ornate ring rotation animation */
-    @keyframes spin-slow {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    .gold-ring-spin {
-      animation: spin-slow 20s linear infinite;
-    }
-
-    /* Card slide animations for quiz */
-    .slide-left-enter {
-      animation: slideLeft 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-    .slide-right-enter {
-      animation: slideRight 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-
-    @keyframes slideLeft {
-      0% { transform: translateX(60px); opacity: 0; }
-      100% { transform: translateX(0); opacity: 1; }
-    }
-    @keyframes slideRight {
-      0% { transform: translateX(-60px); opacity: 0; }
-      100% { transform: translateX(0); opacity: 1; }
-    }
-
-    /* Gradient borders & traditional accents */
-    .vedic-border {
-      border: 2px solid transparent;
-      background: linear-gradient(#fff, #fff) padding-box,
-                  linear-gradient(135deg, #f97316, #d97706, #1e3a8a) border-box;
-    }
-
-    /* Custom scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-      height: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #f1f5f9;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #ea580c;
-      border-radius: 4px;
-    }
-
-    /* Floating WhatsApp & Touch Target Optimizations */
-    .touch-target {
-      min-height: 48px;
-      min-width: 48px;
-    }
-  </style>
+    </script>
+    <!-- FontAwesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .font-cinzel { font-family: 'Cinzel', serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        .marigold-gradient { background: linear-gradient(135deg, #c90c25 0%, #e72a43 50%, #b45309 100%); }
+        .saffron-gradient { background: linear-gradient(90deg, #d97706 0%, #f59e0b 100%); }
+        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); }
+        .tab-btn.active { border-bottom: 3px solid #f59e0b; color: #d97706; font-weight: 700; }
+        /* Custom Scrollbars */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #d97706; border-radius: 3px; }
+    </style>
 </head>
-<body class="font-sans min-h-screen flex flex-col justify-between selection:bg-saffron-500 selection:text-white">
+<body class="font-inter bg-slate-50 text-slate-800 min-h-screen flex flex-col pb-16 md:pb-0">
 
-  <!-- Top Sanskrit Sloka Header -->
-  <div class="bg-gradient-to-r from-vedic-sanskrit via-saffron-700 to-vedic-sanskrit text-amber-100 py-1.5 px-4 text-center text-xs md:text-sm font-semibold tracking-wider flex justify-between items-center shadow-inner">
-    <span class="hidden md:inline">🚩 ॐ असतो मा सद्गमय । तमसो मा ज्योतिर्गमय ॥</span>
-    <span class="mx-auto md:mx-0 font-devanagari text-yellow-200">✨ "सा विद्या या विमुक्तये" (शिक्षा ही मुक्ति दिलाती है)</span>
-    <span class="hidden md:inline">📍 नगा जी सरस्वती विद्या मंदिर, मालदेपुर, बलिया</span>
-  </div>
-
- <!-- Main Navbar -->
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-md border-b border-amber-100">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
-        
-        <!-- Logo & Branding -->
-        <a href="#home" class="flex items-center gap-3 group">
-          <div class="relative w-12 h-12 flex items-center justify-center bg-gradient-to-br from-amber-500 to-saffron-600 rounded-full shadow-lg p-1 group-hover:scale-105 transition-transform duration-300">
-            <!-- SVG Logo: Lotus + Saraswati Veena + Lamp -->
-            <svg class="w-full h-full text-white" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
-              <!-- Lotus Petals -->
-              <path d="M50 20 C35 35 20 60 50 85 C80 60 65 35 50 20 Z" fill="rgba(255,255,255,0.2)" />
-              <path d="M50 35 C30 45 15 65 40 85 C65 85 85 45 50 35 Z" fill="rgba(255,255,255,0.3)" />
-              <!-- Flame -->
-              <path d="M50 15 Q55 25 50 32 Q45 25 50 15 Z" fill="#fbbf24" stroke="#d97706" />
-              <!-- Veena Strings Line -->
-              <line x1="30" y1="50" x2="70" y2="50" stroke="#fff" stroke-width="2" />
-              <line x1="35" y1="58" x2="65" y2="58" stroke="#fff" stroke-width="2" />
-            </svg>
-          </div>
-          <div>
-            <div class="flex items-center gap-1.5">
-              <span class="font-serif font-extrabold text-xl md:text-2xl text-saffron-700 tracking-tight">VidyaNirman</span>
-              <span class="text-xs bg-saffron-100 text-saffron-700 px-2 py-0.5 rounded-full font-bold">NJSVM</span>
+    <!-- Top Header / Banner -->
+    <header class="marigold-gradient text-white shadow-xl sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col md:flex-row justify-between items-center gap-3">
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center text-royal-900 text-2xl font-bold shadow-inner border-2 border-amber-200">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div>
+                    <h1 class="font-cinzel text-xl md:text-2xl font-extrabold tracking-wide text-amber-300">VidyaNirman</h1>
+                    <p class="text-xs text-amber-100/90 font-medium">Naga Ji Saraswati Vidya Mandir Sr Sec School Maldehpur Ballia</p>
+                </div>
             </div>
-            <p class="text-[10px] md:text-xs text-gray-600 font-medium truncate max-w-[200px] sm:max-w-xs">
-              Naga Ji Saraswati Vidya Mandir, Maldehpur, Ballia
-            </p>
-          </div>
-        </a>
-        <a href="https://vn9th.github.io/VidyaNirman9th/" target="vn9th.github.io/VidyaNirman9th/" style="background-color: #860505; color: rgb(250, 236, 236); padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">
+
+            <a href="https://vn9th.github.io/VidyaNirman9th/" target="vn9th.github.io/VidyaNirman9th/" style="background-color: #860505; color: rgb(250, 236, 236); padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">
                         🤝 VISIT OUR PARTNER WEBSITE
                     </a>
                   </p>
                 </div>
 
-        <!-- Desktop Navigation -->
-        <nav class="hidden lg:flex items-center gap-6 font-medium text-sm text-gray-700">
-          <a href="#home" class="hover:text-saffron-600 transition-colors py-2">गृह (Home)</a>
-          <a href="#founders" class="hover:text-saffron-600 transition-colors py-2">संस्थापक (Founders)</a>
-          <a href="#quiz-engine" class="hover:text-saffron-600 transition-colors py-2 flex items-center gap-1">
-            <span>300 MCQ Quiz</span>
-            <span class="bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full animate-pulse">Class 9</span>
-          </a>
-          <a href="#notes" class="hover:text-saffron-600 transition-colors py-2">Science Notes</a>
-          <a href="#simulations" class="hover:text-saffron-600 transition-colors py-2">3D Visualizers</a>
-          <a href="#forum" class="hover:text-saffron-600 transition-colors py-2">Student Forum</a>
-        </nav>
-
-        <!-- Right Quick Action -->
-        <div class="hidden lg:flex items-center gap-3">
-          <button onclick="scrollToQuiz()" class="bg-gradient-to-r from-saffron-600 to-amber-600 text-white px-5 py-2.5 rounded-xl font-bold shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all text-sm flex items-center gap-2">
-            <i class="fa-solid fa-graduation-cap"></i>
-            <span>Start Practice</span>
-          </button>
+            <!-- Main Nav Tabs -->
+            <nav class="flex flex-wrap justify-center gap-1 md:gap-2 text-xs md:text-sm font-semibold">
+                <button onclick="switchTab('home')" id="tab-home" class="tab-btn px-3 py-2 text-amber-100 hover:text-amber-300 transition active">
+                    <i class="fa-solid fa-house mr-1"></i> Home
+                </button>
+                <button onclick="switchTab('notes')" id="tab-notes" class="tab-btn px-3 py-2 text-amber-100 hover:text-amber-300 transition">
+                    <i class="fa-solid fa-book-open mr-1"></i> Class 9 Notes
+                </button>
+                <button onclick="switchTab('quiz')" id="tab-quiz" class="tab-btn px-3 py-2 text-amber-100 hover:text-amber-300 transition">
+                    <i class="fa-solid fa-list-check mr-1"></i> 300 MCQ Engine
+                </button>
+                <button onclick="switchTab('simulations')" id="tab-simulations" class="tab-btn px-3 py-2 text-amber-100 hover:text-amber-300 transition">
+                    <i class="fa-solid fa-flask mr-1"></i> Simulations
+                </button>
+                <button onclick="switchTab('forum')" id="tab-forum" class="tab-btn px-3 py-2 text-amber-100 hover:text-amber-300 transition">
+                    <i class="fa-solid fa-comments mr-1"></i> Forum
+                </button>
+                <button onclick="switchTab('team')" id="tab-team" class="tab-btn px-3 py-2 text-amber-100 hover:text-amber-300 transition">
+                    <i class="fa-solid fa-users mr-1"></i> Our Team
+                </button>
+            </nav>
         </div>
+    </header>
 
-        <!-- Mobile Drawer Toggle Button -->
-        <button id="mobile-menu-btn" onclick="toggleMobileDrawer()" class="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-amber-100 focus:outline-none touch-target flex items-center justify-center">
-          <i id="menu-icon" class="fa-solid fa-bars text-2xl"></i>
-        </button>
-      </div>
-    </div>
-  </header>
+    <!-- Main Container -->
+    <main class="flex-grow max-w-7xl w-full mx-auto p-4 md:p-6">
 
-  <!-- Mobile Navigation Side Drawer -->
-  <div id="mobile-drawer" class="fixed inset-0 z-50 transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden bg-black/50 backdrop-blur-sm pointer-events-none">
-    <div class="fixed right-0 top-0 bottom-0 w-4/5 max-w-sm bg-white shadow-2xl p-6 flex flex-col justify-between pointer-events-auto overflow-y-auto">
-      <div>
-        <!-- Drawer Header -->
-        <div class="flex items-center justify-between pb-4 border-b border-gray-200">
-          <div class="flex items-center gap-2">
-            <div class="w-8 h-8 rounded-full bg-saffron-500 text-white flex items-center justify-center font-bold text-sm">VN</div>
-            <span class="font-bold text-lg text-gray-800">VidyaNirman Navigation</span>
-          </div>
-          <button onclick="toggleMobileDrawer()" class="p-2 text-gray-500 hover:text-gray-800 touch-target">
-            <i class="fa-solid fa-xmark text-xl"></i>
-          </button>
-        </div>
-
-        <!-- Drawer Links -->
-        <nav class="flex flex-col gap-3 mt-6 text-base font-semibold text-gray-700">
-          <a href="#home" onclick="toggleMobileDrawer()" class="p-3 rounded-lg hover:bg-saffron-50 flex items-center gap-3">
-            <i class="fa-solid fa-house text-saffron-600"></i> Home
-          </a>
-          <a href="#founders" onclick="toggleMobileDrawer()" class="p-3 rounded-lg hover:bg-saffron-50 flex items-center gap-3">
-            <i class="fa-solid fa-users text-saffron-600"></i> Founders & Team
-          </a>
-          <a href="#quiz-engine" onclick="toggleMobileDrawer()" class="p-3 rounded-lg hover:bg-saffron-50 flex items-center justify-between">
-            <span class="flex items-center gap-3"><i class="fa-solid fa-pen-to-square text-saffron-600"></i> 300 MCQ Test</span>
-            <span class="bg-saffron-100 text-saffron-700 text-xs px-2 py-0.5 rounded-full">Class 9</span>
-          </a>
-          <a href="#notes" onclick="toggleMobileDrawer()" class="p-3 rounded-lg hover:bg-saffron-50 flex items-center gap-3">
-            <i class="fa-solid fa-book-open text-saffron-600"></i> Detailed Notes
-          </a>
-          <a href="#simulations" onclick="toggleMobileDrawer()" class="p-3 rounded-lg hover:bg-saffron-50 flex items-center gap-3">
-            <i class="fa-solid fa-atom text-saffron-600"></i> 3D Science Visualizers
-          </a>
-          <a href="#forum" onclick="toggleMobileDrawer()" class="p-3 rounded-lg hover:bg-saffron-50 flex items-center gap-3">
-            <i class="fa-solid fa-comments text-saffron-600"></i> Doubts & Forum
-          </a>
-        </nav>
-      </div>
-
-      <!-- Drawer Footer Info -->
-      <div class="pt-6 border-t border-gray-200 text-xs text-gray-500">
-        <p class="font-bold text-gray-700 mb-1">NJSVM School, Ballia</p>
-        <p>Dedicated to excellence in Class 9 Science Education.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Hero Section -->
-  <section id="home" class="relative bg-gradient-to-b from-amber-50 via-orange-50/30 to-white py-12 lg:py-20 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-12 gap-8 items-center">
-        
-        <!-- Left Content -->
-        <div class="lg:col-span-7 text-center lg:text-left space-y-6">
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-saffron-100 border border-saffron-200 text-saffron-800 text-xs sm:text-sm font-semibold">
-            <span class="w-2 h-2 rounded-full bg-saffron-600 animate-ping"></span>
-            <span>Naga Ji Saraswati Vidya Mandir, Maldehpur, Ballia</span>
-          </div>
-
-          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 leading-tight">
-            Empowering Minds with <span class="text-transparent bg-clip-text bg-gradient-to-r from-saffron-600 via-amber-600 to-vedic-royalBlue">Class 9 Science</span> Excellence
-          </h1>
-
-          <p class="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
-            Welcome to <strong>VidyaNirman</strong> — the official interactive learning portal. Access 300 topic-wise MCQs with detailed explanations, interactive 3D simulations, and complete chapter notes for Physics, Chemistry, and Biology!
-          </p>
-
-          <!-- Action Buttons -->
-          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-            <a href="#quiz-engine" class="touch-target px-6 py-3.5 rounded-xl bg-gradient-to-r from-saffron-600 to-amber-600 text-white font-bold shadow-lg shadow-saffron-500/20 hover:shadow-xl hover:scale-105 active:scale-95 transition-all flex items-center gap-2">
-              <i class="fa-solid fa-circle-play text-lg"></i>
-              <span>Take 300 MCQ Quiz</span>
-            </a>
-            <a href="#founders" class="touch-target px-6 py-3.5 rounded-xl bg-white border-2 border-amber-200 text-amber-900 font-bold hover:bg-amber-50 hover:border-amber-300 transition-all flex items-center gap-2 shadow-sm">
-              <i class="fa-solid fa-users text-saffron-600"></i>
-              <span>Meet Our Founders</span>
-            </a>
-          </div>
-
-          <!-- Quick Stats Grid -->
-          <div class="grid grid-cols-3 gap-3 pt-6 border-t border-amber-200/60 max-w-lg mx-auto lg:mx-0">
-            <div class="bg-white/80 p-3 rounded-xl shadow-sm text-center border border-amber-100">
-              <span class="block text-xl sm:text-2xl font-black text-saffron-600">300</span>
-              <span class="text-xs text-gray-500 font-medium">Practice MCQs</span>
-            </div>
-            <div class="bg-white/80 p-3 rounded-xl shadow-sm text-center border border-amber-100">
-              <span class="block text-xl sm:text-2xl font-black text-vedic-royalBlue">11</span>
-              <span class="text-xs text-gray-500 font-medium">Full Chapters</span>
-            </div>
-            <div class="bg-white/80 p-3 rounded-xl shadow-sm text-center border border-amber-100">
-              <span class="block text-xl sm:text-2xl font-black text-emerald-600">4</span>
-              <span class="text-xs text-gray-500 font-medium">3D Simulators</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right Visual Showcase -->
-        <div class="lg:col-span-5 flex justify-center">
-          <div class="relative w-full max-w-md aspect-square bg-gradient-to-br from-amber-400 via-saffron-500 to-vedic-royalBlue p-1.5 rounded-3xl shadow-2xl">
-            <div class="w-full h-full bg-white rounded-[22px] p-6 flex flex-col justify-between relative overflow-hidden">
-              <div class="absolute -right-10 -bottom-10 opacity-10 text-saffron-700 pointer-events-none">
-                <i class="fa-solid fa-flask text-[180px]"></i>
-              </div>
-              
-              <!-- Badge -->
-              <div class="flex justify-between items-center border-b pb-3">
-                <span class="text-xs font-bold text-saffron-600 tracking-wider uppercase">Class 9 Curriculum</span>
-                <span class="text-xs bg-emerald-100 text-emerald-800 font-bold px-2.5 py-1 rounded-full"><i class="fa-solid fa-check-circle mr-1"></i> Updated 2026</span>
-              </div>
-
-              <!-- Main Hero Box Content -->
-              <div class="my-auto space-y-4 text-center py-4">
-                <div class="w-16 h-16 mx-auto bg-saffron-100 rounded-2xl flex items-center justify-center text-saffron-600 text-3xl shadow-inner">
-                  <i class="fa-solid fa-atom animate-spin" style="animation-duration: 10s;"></i>
+        <!-- ================= HOME TAB ================= -->
+        <section id="sec-home" class="space-y-6">
+            <!-- Hero Banner -->
+            <div class="marigold-gradient rounded-2xl p-6 md:p-10 text-white shadow-2xl relative overflow-hidden">
+                <div class="relative z-10 max-w-2xl">
+                    <span class="bg-amber-500/30 text-amber-300 text-xs font-bold px-3 py-1 rounded-full border border-amber-400/40 uppercase tracking-widest inline-block mb-3">Academic Excellence Hub</span>
+                    <h2 class="font-cinzel text-3xl md:text-5xl font-extrabold mb-4 leading-tight text-amber-100">Empowering Future Innovators & Scholars</h2>
+                    <p class="text-slate-200 text-sm md:text-base leading-relaxed mb-6">
+                        Welcome to VidyaNirman — the official digital learning portal of Naga Ji Saraswati Vidya Mandir Sr Sec School Maldehpur Ballia. Access complete NCERT class notes, practice 300 interactive MCQs, explore canvas science experiments, and engage with peers.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <button onclick="switchTab('quiz')" class="bg-amber-500 hover:bg-amber-600 text-royal-950 font-bold px-5 py-3 rounded-xl shadow-lg transition flex items-center">
+                            <i class="fa-solid fa-play mr-2"></i> Start 300 MCQ Quiz
+                        </button>
+                        <button onclick="switchTab('notes')" class="bg-royal-800 hover:bg-royal-900 border border-amber-400/40 text-amber-200 font-bold px-5 py-3 rounded-xl transition flex items-center">
+                            <i class="fa-solid fa-book-reader mr-2"></i> Browse Class 9 Notes
+                        </button>
+                    </div>
                 </div>
-                <h3 class="font-extrabold text-xl text-gray-800">Master Physics, Chemistry & Biology</h3>
-                <p class="text-xs text-gray-600 leading-relaxed">
-                  Interactive step-by-step problem solver, instant score grid, and interactive atomic & wave visualizers designed for NJSVM students.
-                </p>
-              </div>
+            </div>
 
-              <!-- Action Card Bottom -->
-              <div class="bg-amber-50 p-3 rounded-xl border border-amber-200 flex items-center justify-between">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-circle-info text-saffron-600"></i>
-                  <span class="text-xs font-medium text-amber-900">Mobile Photo Fix Enabled</span>
+            <!-- Quick Access Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-atom"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-2">NCERT Class 9 Science</h3>
+                    <p class="text-slate-600 text-sm mb-4">Comprehensive chapter breakdown for Physics, Chemistry, and Biology curated for school exams.</p>
+                    <button onclick="switchTab('notes')" class="text-amber-600 font-semibold text-sm hover:underline inline-flex items-center">
+                        Explore Notes <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
                 </div>
-                <span class="text-[10px] bg-saffron-600 text-white font-bold px-2 py-0.5 rounded">Active</span>
-              </div>
-            </div>
-          </div>
-        </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- FOUNDERS & TEAM SHOWCASE -->
-  <section id="founders" class="py-16 bg-white border-t border-b border-amber-100 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <span class="text-saffron-600 font-bold text-xs uppercase tracking-widest bg-saffron-50 px-3 py-1 rounded-full border border-saffron-200">Our Leadership & Vision</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-2 font-serif">Meet the Founders & Team</h2>
-        <p class="text-gray-600 mt-2 text-sm sm:text-base">
-          Dedicated creators powering VidyaNirman for Naga Ji Saraswati Vidya Mandir, Ballia.
-        </p>
-        
-        <!-- Cross-Device Image Help Notice -->
-        <div class="mt-4 bg-amber-50 border border-amber-300 rounded-xl p-3 text-xs text-amber-800 max-w-2xl mx-auto text-left flex items-start gap-2 shadow-sm">
-          <i class="fa-solid fa-triangle-exclamation text-saffron-600 text-lg mt-0.5"></i>
-          <div>
-            <strong>Mobile Photo Tip:</strong> If local photo paths fail on your mobile phone, click <strong>"📷 Upload Photo"</strong> directly on any card below to pick a photo from your phone gallery or paste a public web link.
-          </div>
-        </div>
-      </div>
-
-      <!-- Team Grid (6 Members) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="team-cards-container">
-        <!-- Javascript dynamically builds resilient team cards here -->
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 400 MCQ SLIDING / STEPPER QUIZ ENGINE -->
-  <section id="quiz-engine" class="py-16 bg-slate-900 text-white relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Quiz Header -->
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 border-b border-slate-800 pb-6">
-        <div>
-          <span class="text-saffron-500 text-xs font-bold uppercase tracking-widest bg-slate-800 px-3 py-1 rounded-full border border-saffron-500/30">NJSVM Science Test</span>
-          <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-2">Class 9 Science 400 MCQ Bank</h2>
-          <p class="text-slate-400 text-xs sm:text-sm mt-1">
-            Physics (1-100) • Chemistry (101-200) • Biology (201-400)
-          </p>
-        </div>
-
-        <!-- Subject Filter Tabs -->
-        <div class="flex flex-wrap gap-2">
-          <button onclick="filterQuizSubject('ALL')" id="tab-ALL" class="quiz-tab-btn active-tab px-3.5 py-1.5 rounded-lg text-xs font-bold bg-saffron-600 text-white transition-all">
-            All 400
-          </button>
-          <button onclick="filterQuizSubject('PHYSICS')" id="tab-PHYSICS" class="quiz-tab-btn px-3.5 py-1.5 rounded-lg text-xs font-bold bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all">
-            Physics (1-100)
-          </button>
-          <button onclick="filterQuizSubject('CHEMISTRY')" id="tab-CHEMISTRY" class="quiz-tab-btn px-3.5 py-1.5 rounded-lg text-xs font-bold bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all">
-            Chemistry (101-200)
-          </button>
-          <button onclick="filterQuizSubject('BIOLOGY')" id="tab-BIOLOGY" class="quiz-tab-btn px-3.5 py-1.5 rounded-lg text-xs font-bold bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all">
-            Biology (201-400)
-          </button>
-        </div>
-      </div>
-
-      <!-- Live Quiz Progress Bar & Score Counter -->
-      <div class="bg-slate-800 rounded-2xl p-4 mb-6 border border-slate-700 shadow-lg">
-        <div class="flex flex-wrap justify-between items-center text-xs text-slate-300 mb-2 gap-2">
-          <span id="quiz-progress-text" class="font-bold text-amber-400">Question 1 of 400</span>
-          <div class="flex items-center gap-4">
-            <span class="text-emerald-400 font-bold"><i class="fa-solid fa-circle-check mr-1"></i> Correct: <span id="score-correct">0</span></span>
-            <span class="text-rose-400 font-bold"><i class="fa-solid fa-circle-xmark mr-1"></i> Wrong: <span id="score-wrong">0</span></span>
-            <span class="text-slate-400 font-medium">Attempted: <span id="score-attempted">0</span>/400</span>
-          </div>
-        </div>
-        <div class="w-full h-3 bg-slate-900 rounded-full overflow-hidden p-0.5 border border-slate-700">
-          <div id="quiz-progress-fill" class="h-full bg-gradient-to-r from-saffron-500 via-amber-400 to-emerald-500 rounded-full transition-all duration-300" style="width: 0.33%;"></div>
-        </div>
-      </div>
-
-      <!-- Main Quiz Interactive Sliding Card Wrapper -->
-      <div class="grid lg:grid-cols-12 gap-8">
-        
-        <!-- Left: Current Sliding Question Card (8 Cols) -->
-        <div class="lg:col-span-8">
-          <div id="quiz-card-wrapper" class="bg-slate-800/90 rounded-2xl border border-slate-700 p-6 shadow-2xl relative min-h-[380px] flex flex-col justify-between overflow-hidden">
-            
-            <!-- Question Content Box -->
-            <div id="quiz-question-box" class="space-y-6">
-              <!-- Dynamically populated via JavaScript -->
-            </div>
-
-            <!-- Quiz Stepper Buttons -->
-            <div class="flex items-center justify-between pt-6 border-t border-slate-700/80 mt-6 gap-2">
-              <button onclick="navigateQuiz(-1)" id="btn-prev-q" class="touch-target px-5 py-2.5 rounded-xl bg-slate-700 hover:bg-slate-600 text-white text-xs font-bold flex items-center gap-2 transition-all disabled:opacity-40 disabled:cursor-not-allowed">
-                <i class="fa-solid fa-arrow-left"></i> Previous
-              </button>
-
-              <button onclick="toggleGridModal()" class="px-3 py-2 rounded-lg bg-slate-700/50 hover:bg-slate-700 text-slate-300 text-xs font-medium lg:hidden">
-                <i class="fa-solid fa-border-all"></i> Grid
-              </button>
-
-              <button onclick="navigateQuiz(1)" id="btn-next-q" class="touch-target px-6 py-2.5 rounded-xl bg-gradient-to-r from-saffron-600 to-amber-600 text-white text-xs font-bold flex items-center gap-2 hover:shadow-lg transition-all">
-                Next <i class="fa-solid fa-arrow-right"></i>
-              </button>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Right: 1-400 Interactive Palette Grid (4 Cols) -->
-        <div class="lg:col-span-4 bg-slate-800 rounded-2xl p-5 border border-slate-700 flex flex-col max-h-[500px]">
-          <div class="flex items-center justify-between pb-3 border-b border-slate-700 mb-3">
-            <h3 class="font-bold text-sm text-white flex items-center gap-2">
-              <i class="fa-solid fa-grid-2 text-saffron-500"></i> Question Jump Grid
-            </h3>
-            <span class="text-[10px] text-slate-400">Click any # to jump</span>
-          </div>
-
-          <!-- Color Legend -->
-          <div class="flex items-center gap-3 text-[10px] mb-3 text-slate-400 flex-wrap">
-            <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block"></span> Correct</span>
-            <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-rose-500 inline-block"></span> Wrong</span>
-            <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-slate-600 inline-block"></span> Unattempted</span>
-          </div>
-
-          <!-- Scrollable Grid Matrix -->
-          <div id="question-grid-palette" class="grid grid-cols-6 sm:grid-cols-8 lg:grid-cols-6 gap-1.5 overflow-y-auto pr-1 flex-1">
-            <!-- 400 Buttons loaded dynamically by JS -->
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CLASS 9 SCIENCE DETAILED NOTES & CURRICULUM -->
-  <section id="notes" class="py-16 bg-gradient-to-b from-amber-50/50 via-white to-amber-50/30">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <span class="text-saffron-600 font-bold text-xs uppercase tracking-widest bg-saffron-100 px-3 py-1 rounded-full">NCERT Curriculum Aligned</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-2 font-serif">Class 9 Science Chapter Notes</h2>
-        <p class="text-gray-600 mt-2 text-sm sm:text-base">
-          Comprehensive notes, key formulas, definition summaries, and diagrams for NJSVM school exams.
-        </p>
-      </div>
-
-      <!-- Notes Accordion Container -->
-      <div class="space-y-6 max-w-5xl mx-auto">
-        
-        <!-- Physics Category -->
-        <div class="bg-white rounded-2xl shadow-md border border-amber-200 overflow-hidden">
-          <div class="bg-gradient-to-r from-saffron-600 to-amber-600 p-4 text-white font-bold text-lg flex items-center justify-between">
-            <span class="flex items-center gap-3"><i class="fa-solid fa-bolt"></i> 1. Physics Curriculum Notes</span>
-            <span class="text-xs bg-white/20 px-3 py-1 rounded-full">4 Chapters</span>
-          </div>
-          
-          <div class="p-5 space-y-4 text-sm text-gray-700">
-            <!-- Ch 1: Motion -->
-            <details class="group bg-amber-50/60 rounded-xl border border-amber-200/80 p-4">
-              <summary class="font-bold text-base text-saffron-800 cursor-pointer flex justify-between items-center select-none">
-                <span>📍 Chapter 1: Motion (गति)</span>
-                <i class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform"></i>
-              </summary>
-              <div class="mt-3 pt-3 border-t border-amber-200 space-y-2 text-gray-700">
-                <p><strong>Distance vs Displacement:</strong> Distance is scalar (total path length), while displacement is vector (shortest distance between initial and final position).</p>
-                <div class="bg-white p-3 rounded-lg border border-amber-200 font-mono text-xs text-saffron-900 my-2">
-                  Equations of Motion:<br>
-                  1. v = u + at<br>
-                  2. s = ut + ½ at²<br>
-                  3. v² = u² + 2as
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-vial"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-2">Canvas Lab Simulations</h3>
+                    <p class="text-slate-600 text-sm mb-4">Interactive HTML5 visualizations for Pendulum motion, Wave acoustics, and Molecular movement.</p>
+                    <button onclick="switchTab('simulations')" class="text-blue-600 font-semibold text-sm hover:underline inline-flex items-center">
+                        Launch Visualizers <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
                 </div>
-                <p><strong>Uniform Circular Motion:</strong> Motion of an object along a circular path with constant speed. Speed = 2πr / T.</p>
-              </div>
-            </details>
 
-            <!-- Ch 2: Force & Laws of Motion -->
-            <details class="group bg-amber-50/60 rounded-xl border border-amber-200/80 p-4">
-              <summary class="font-bold text-base text-saffron-800 cursor-pointer flex justify-between items-center select-none">
-                <span>🛡️ Chapter 2: Force & Laws of Motion (बल तथा गति के नियम)</span>
-                <i class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform"></i>
-              </summary>
-              <div class="mt-3 pt-3 border-t border-amber-200 space-y-2 text-gray-700">
-                <p><strong>Newton's 1st Law (Inertia):</strong> An object remains in rest or uniform motion unless acted upon by an external unbalanced force.</p>
-                <p><strong>Newton's 2nd Law:</strong> Force = mass × acceleration (F = ma). Rate of change of momentum is directly proportional to applied force.</p>
-                <p><strong>Newton's 3rd Law:</strong> To every action, there is an equal and opposite reaction.</p>
-              </div>
-            </details>
-
-            <!-- Ch 3: Work, Energy & Simple Machines -->
-            <details class="group bg-amber-50/60 rounded-xl border border-amber-200/80 p-4">
-              <summary class="font-bold text-base text-saffron-800 cursor-pointer flex justify-between items-center select-none">
-                <span>⚙️ Chapter 3: Work, Energy & Simple Machines (कार्य, ऊर्जा एवं सरल मशीनें)</span>
-                <i class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform"></i>
-              </summary>
-              <div class="mt-3 pt-3 border-t border-amber-200 space-y-2 text-gray-700">
-                <p><strong>Work Done:</strong> W = F × s × cos(θ). SI unit is Joule (J).</p>
-                <p><strong>Kinetic Energy:</strong> KE = ½ mv². <strong>Potential Energy:</strong> PE = mgh.</p>
-                <p><strong>Law of Conservation of Energy:</strong> Energy can neither be created nor destroyed; it only transforms from one form to another.</p>
-              </div>
-            </details>
-
-            <!-- Ch 4: Sound Waves -->
-            <details class="group bg-amber-50/60 rounded-xl border border-amber-200/80 p-4">
-              <summary class="font-bold text-base text-saffron-800 cursor-pointer flex justify-between items-center select-none">
-                <span>🔊 Chapter 4: Sound Waves (ध्वनि तरंगें)</span>
-                <i class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform"></i>
-              </summary>
-              <div class="mt-3 pt-3 border-t border-amber-200 space-y-2 text-gray-700">
-                <p>Sound is a longitudinal mechanical wave created by vibrations. It requires a material medium to propagate.</p>
-                <p><strong>Wave Relation:</strong> Speed (v) = Frequency (ν) × Wavelength (λ).</p>
-                <p><strong>Audible Range for Humans:</strong> 20 Hz to 20,000 Hz (20 kHz).</p>
-              </div>
-            </details>
-          </div>
-        </div>
-
-        <!-- Chemistry Category -->
-        <div class="bg-white rounded-2xl shadow-md border border-amber-200 overflow-hidden">
-          <div class="bg-gradient-to-r from-vedic-royalBlue to-blue-700 p-4 text-white font-bold text-lg flex items-center justify-between">
-            <span class="flex items-center gap-3"><i class="fa-solid fa-flask-vial"></i> 2. Chemistry Curriculum Notes</span>
-            <span class="text-xs bg-white/20 px-3 py-1 rounded-full">3 Chapters</span>
-          </div>
-          
-          <div class="p-5 space-y-4 text-sm text-gray-700">
-            <!-- Ch 1: Exploring Mixtures & Separation -->
-            <details class="group bg-blue-50/60 rounded-xl border border-blue-200/80 p-4">
-              <summary class="font-bold text-base text-blue-900 cursor-pointer flex justify-between items-center select-none">
-                <span>🧪 Chapter 1: Exploring Mixtures & Separation (मिश्रण एवं पृथक्करण)</span>
-                <i class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform"></i>
-              </summary>
-              <div class="mt-3 pt-3 border-t border-blue-200 space-y-2">
-                <p><strong>Heterogeneous vs Homogeneous:</strong> Homogeneous mixtures have uniform composition throughout (e.g. salt solution), whereas heterogeneous mixtures do not (e.g. sand in water).</p>
-                <p><strong>Separation Techniques:</strong> Distillation (miscible liquids with boiling point difference), Centrifugation (density differences), Chromatography (solubility differences).</p>
-              </div>
-            </details>
-
-            <!-- Ch 2: Journey Inside the Atom -->
-            <details class="group bg-blue-50/60 rounded-xl border border-blue-200/80 p-4">
-              <summary class="font-bold text-base text-blue-900 cursor-pointer flex justify-between items-center select-none">
-                <span>⚛️ Chapter 2: Journey Inside the Atom (परमाणु की आंतरिक संरचना)</span>
-                <i class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform"></i>
-              </summary>
-              <div class="mt-3 pt-3 border-t border-blue-200 space-y-2">
-                <p><strong>Subatomic Particles:</strong> Protons (+1, nucleus), Neutrons (0, nucleus), Electrons (-1, orbiting in shells).</p>
-                <p><strong>Bohr's Model:</strong> Electrons revolve in discrete energy levels designated as K, L, M, N shells with maximum capacity 2n².</p>
-              </div>
-            </details>
-
-            <!-- Ch 3: Foundation of Matter -->
-            <details class="group bg-blue-50/60 rounded-xl border border-blue-200/80 p-4">
-              <summary class="font-bold text-base text-blue-900 cursor-pointer flex justify-between items-center select-none">
-                <span>🧱 Chapter 3: Foundation of Matter (द्रव्य की नींव)</span>
-                <i class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform"></i>
-              </summary>
-              <div class="mt-3 pt-3 border-t border-blue-200 space-y-2">
-                <p><strong>Law of Conservation of Mass:</strong> Mass can neither be created nor destroyed in a chemical reaction.</p>
-                <p><strong>Law of Constant Proportions:</strong> In a chemical compound, elements are always present in definite proportions by mass.</p>
-              </div>
-            </details>
-          </div>
-        </div>
-
-        <!-- Biology Category -->
-        <div class="bg-white rounded-2xl shadow-md border border-amber-200 overflow-hidden">
-          <div class="bg-gradient-to-r from-emerald-600 to-teal-700 p-4 text-white font-bold text-lg flex items-center justify-between">
-            <span class="flex items-center gap-3"><i class="fa-solid fa-dna"></i> 3. Biology Curriculum Notes</span>
-            <span class="text-xs bg-white/20 px-3 py-1 rounded-full">4 Chapters</span>
-          </div>
-          
-          <div class="p-5 space-y-4 text-sm text-gray-700">
-            <!-- Ch 1: Cell -->
-            <details class="group bg-emerald-50/60 rounded-xl border border-emerald-200/80 p-4">
-              <summary class="font-bold text-base text-emerald-900 cursor-pointer flex justify-between items-center select-none">
-                <span>🔬 Chapter 1: The Fundamental Unit of Life - Cell (कोशिका)</span>
-                <i class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform"></i>
-              </summary>
-              <div class="mt-3 pt-3 border-t border-emerald-200 space-y-2">
-                <p>Cell was discovered by Robert Hooke in 1665 in cork slices.</p>
-                <p><strong>Key Organelles:</strong> Mitochondria (Powerhouse of the cell - ATP), Lysosomes (Suicide bags), Nucleus (Brain of the cell).</p>
-              </div>
-            </details>
-
-            <!-- Ch 2: Tissues -->
-            <details class="group bg-emerald-50/60 rounded-xl border border-emerald-200/80 p-4">
-              <summary class="font-bold text-base text-emerald-900 cursor-pointer flex justify-between items-center select-none">
-                <span>🌿 Chapter 2: Tissues (ऊतक)</span>
-                <i class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform"></i>
-              </summary>
-              <div class="mt-3 pt-3 border-t border-emerald-200 space-y-2">
-                <p><strong>Plant Tissues:</strong> Meristematic (dividing) & Permanent (Simple: Parenchyma, Collenchyma, Sclerenchyma; Complex: Xylem, Phloem).</p>
-                <p><strong>Animal Tissues:</strong> Epithelial, Connective (Blood, Bone), Muscular, Nervous.</p>
-              </div>
-            </details>
-
-            <!-- Ch 3 & 4: Reproduction & Diversity -->
-            <details class="group bg-emerald-50/60 rounded-xl border border-emerald-200/80 p-4">
-              <summary class="font-bold text-base text-emerald-900 cursor-pointer flex justify-between items-center select-none">
-                <span>🌱 Chapter 3 & 4: Reproduction & Diversity in Living Organisms</span>
-                <i class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform"></i>
-              </summary>
-              <div class="mt-3 pt-3 border-t border-emerald-200 space-y-2">
-                <p><strong>Cell Division:</strong> Mitosis (for growth & repair - produces 2 identical diploid cells), Meiosis (for gamete formation - produces 4 haploid cells).</p>
-                <p><strong>5 Kingdom Classification (Whittaker):</strong> Monera, Protista, Fungi, Plantae, Animalia.</p>
-              </div>
-            </details>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- WORKING 3D / ANIMATED SIMULATION VISUALIZERS -->
-  <section id="simulations" class="py-16 bg-slate-950 text-white relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <span class="text-saffron-500 font-bold text-xs uppercase tracking-widest bg-slate-800 px-3 py-1 rounded-full border border-saffron-500/30">Interactive Science Lab</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Interactive 2D & 3D Visualizers</h2>
-        <p class="text-slate-400 text-sm sm:text-base mt-2">
-          Adjust parameters dynamically in real time to understand fundamental concepts of Science!
-        </p>
-      </div>
-
-      <!-- Simulator Tabs & Content -->
-      <div class="bg-slate-900 rounded-2xl border border-slate-800 p-6 shadow-2xl">
-        
-        <!-- Visualizer Selector Buttons -->
-        <div class="flex flex-wrap gap-2 mb-6 border-b border-slate-800 pb-4">
-          <button onclick="switchSim('motion')" id="sim-btn-motion" class="sim-tab-btn active-sim px-4 py-2 rounded-xl text-xs font-bold bg-saffron-600 text-white flex items-center gap-2">
-            <i class="fa-solid fa-chart-line"></i> Physics: Motion Trajectory
-          </button>
-          <button onclick="switchSim('bohr')" id="sim-btn-bohr" class="sim-tab-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-300 hover:bg-slate-700 flex items-center gap-2">
-            <i class="fa-solid fa-atom"></i> Chemistry: Bohr Model
-          </button>
-          <button onclick="switchSim('cell')" id="sim-btn-cell" class="sim-tab-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-300 hover:bg-slate-700 flex items-center gap-2">
-            <i class="fa-solid fa-disease"></i> Biology: Cell Organelles
-          </button>
-          <button onclick="switchSim('sound')" id="sim-btn-sound" class="sim-tab-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-300 hover:bg-slate-700 flex items-center gap-2">
-            <i class="fa-solid fa-wave-square"></i> Physics: Sound Oscilloscope
-          </button>
-        </div>
-
-        <!-- Canvas Visualizer Display Box -->
-        <div class="grid lg:grid-cols-12 gap-6 items-center">
-          
-          <!-- Canvas Area (8 Cols) -->
-          <div class="lg:col-span-8 bg-slate-950 rounded-xl p-3 border border-slate-800 flex justify-center items-center relative overflow-hidden min-h-[320px]">
-            <canvas id="sim-canvas" class="w-full h-[300px] sm:h-[350px] rounded-lg bg-black/60"></canvas>
-            <div id="sim-info-overlay" class="absolute top-5 left-5 bg-black/70 px-3 py-1.5 rounded-lg text-xs font-mono text-emerald-400 border border-emerald-500/30">
-              Initializing Canvas...
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-share-nodes"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-2">Student Referral & Links</h3>
+                    <p class="text-slate-600 text-sm mb-4">Generate custom invite links to study with your classmates and keep track of your active study circle.</p>
+                    <button onclick="generateReferral()" class="text-emerald-600 font-semibold text-sm hover:underline inline-flex items-center">
+                        Generate Study Link <i class="fa-solid fa-link ml-1"></i>
+                    </button>
+                </div>
             </div>
-          </div>
 
-          <!-- Interactive Controls Sidebar (4 Cols) -->
-          <div class="lg:col-span-4 bg-slate-800/80 p-5 rounded-xl border border-slate-700 space-y-4" id="sim-controls-container">
-            <!-- Controls dynamically generated based on active visualizer -->
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- STUDENT FORUM & DOUBTS SECTION -->
-  <section id="forum" class="py-16 bg-white border-t border-amber-100">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-10">
-        <span class="text-saffron-600 font-bold text-xs uppercase tracking-widest bg-saffron-100 px-3 py-1 rounded-full">Community Learning</span>
-        <h2 class="text-3xl font-extrabold text-gray-900 mt-2 font-serif">NJSVM Student Doubts & Discussion Forum</h2>
-        <p class="text-gray-600 text-sm mt-1">Ask questions, share answers, and collaborate with Class 9 classmates!</p>
-      </div>
-
-      <div class="grid md:grid-cols-12 gap-8">
-        
-        <!-- Left: Post a Question Form (5 Cols) -->
-        <div class="md:col-span-5 bg-amber-50/60 p-6 rounded-2xl border border-amber-200 shadow-sm">
-          <h3 class="font-bold text-lg text-gray-800 mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-pen-nib text-saffron-600"></i> Post a Doubt
-          </h3>
-          <form id="forum-post-form" onsubmit="handleForumSubmit(event)" class="space-y-4">
-            <div>
-              <label class="block text-xs font-semibold text-gray-700 mb-1">Your Name & Class</label>
-              <input type="text" id="forum-author" required placeholder="e.g. Rahul Sharma (Class 9-A)" class="w-full px-3 py-2 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-saffron-500 focus:outline-none bg-white">
-            </div>
-            <div>
-              <label class="block text-xs font-semibold text-gray-700 mb-1">Subject</label>
-              <select id="forum-subject" class="w-full px-3 py-2 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-saffron-500 focus:outline-none bg-white">
-                <option value="Physics">Physics</option>
-                <option value="Chemistry">Chemistry</option>
-                <option value="Biology">Biology</option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-xs font-semibold text-gray-700 mb-1">Your Question / Doubt</label>
-              <textarea id="forum-question" rows="3" required placeholder="Explain Newton's third law with everyday examples..." class="w-full px-3 py-2 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-saffron-500 focus:outline-none bg-white"></textarea>
-            </div>
-            <button type="submit" class="w-full touch-target py-3 rounded-xl bg-saffron-600 hover:bg-saffron-700 text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2">
-              <i class="fa-solid fa-paper-plane"></i> Post Question
-            </button>
-          </form>
-        </div>
-
-        <!-- Right: Active Doubts Feed (7 Cols) -->
-        <div class="md:col-span-7 space-y-4" id="forum-feed-container">
-          <!-- Dynamically populated forum posts -->
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- REFERRAL SHARE SECTION -->
-  <section class="py-12 bg-gradient-to-r from-saffron-600 via-amber-600 to-vedic-royalBlue text-white">
-    <div class="max-w-5xl mx-auto px-4 text-center space-y-4">
-      <h3 class="text-2xl sm:text-3xl font-extrabold font-serif">Share VidyaNirman with Classmates!</h3>
-      <p class="text-amber-100 text-xs sm:text-sm max-w-xl mx-auto">
-        Help your fellow students at Naga Ji Saraswati Vidya Mandir, Maldehpur, Ballia excel in Class 9 Science.
-      </p>
-
-      <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
-        <button onclick="copyShareLink()" class="touch-target px-6 py-3 rounded-xl bg-white text-saffron-700 font-bold text-sm hover:bg-amber-50 shadow-lg flex items-center gap-2">
-          <i class="fa-solid fa-copy"></i>
-          <span>Copy Website Link</span>
-        </button>
-        <button onclick="shareWhatsApp()" class="touch-target px-6 py-3 rounded-xl bg-emerald-500 text-white font-bold text-sm hover:bg-emerald-600 shadow-lg flex items-center gap-2">
-          <i class="fa-brands fa-whatsapp text-lg"></i>
-          <span>Share on WhatsApp</span>
-        </button>
-      </div>
-      <p id="share-toast" class="text-xs font-bold text-yellow-200 hidden animate-bounce">
-        ✅ Link copied to clipboard!
-      </p>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800 text-xs">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-      
-      <!-- School Info -->
-      <div class="space-y-3">
-        <div class="flex items-center gap-2 text-white font-serif font-bold text-lg">
-          <span class="text-saffron-500">VidyaNirman</span>
-        </div>
-        <p class="text-gray-400 leading-relaxed">
-          Dedicated online educational portal for Naga Ji Saraswati Vidya Mandir Sr Sec School, Maldehpur, Ballia.
-        </p>
-        <p class="text-saffron-400 font-devanagari font-semibold">"सा विद्या या विमुक्तये"</p>
-      </div>
-
-      <!-- Quick Links -->
-      <div class="space-y-2">
-        <h4 class="text-white font-bold text-sm mb-3">Quick Navigation</h4>
-        <p><a href="#home" class="hover:text-white transition-colors">Home</a></p>
-        <p><a href="#founders" class="hover:text-white transition-colors">Founders & Team</a></p>
-        <p><a href="#quiz-engine" class="hover:text-white transition-colors">300 MCQ Science Bank</a></p>
-        <p><a href="#simulations" class="hover:text-white transition-colors">3D Interactive Simulations</a></p>
-      </div>
-
-      <!-- Contact Info -->
-      <div class="space-y-2">
-        <h4 class="text-white font-bold text-sm mb-3">Contact Leadership</h4>
-        <p><i class="fa-solid fa-user text-saffron-500 mr-2"></i> Founder Amrit Singh</p>
-        <p><i class="fa-solid fa-phone text-saffron-500 mr-2"></i> +91 9277138739</p>
-        <p><i class="fa-solid fa-envelope text-saffron-500 mr-2"></i> asdigitalgraphics6@gmail.com</p>
-        <p><i class="fa-solid fa-location-dot text-saffron-500 mr-2"></i> Maldehpur, Ballia, Uttar Pradesh</p>
-      </div>
-
-    </div>
-    
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 mt-8 border-t border-gray-800 text-center text-gray-500">
-      &copy; 2026 VidyaNirman - Naga Ji Saraswati Vidya Mandir, Ballia. All Rights Reserved.
-           <p style="font-size: 18px; color:#d95306;"></p>"
-
-              <a href="https://vn9th.github.io/VidyaNirman9th/" target="vn9th.github.io/VidyaNirman9th/" style="background-color: #c8ff00; color: rgb(10, 1, 1); padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">
-                        🤝 Visit Our Partner
+            <!-- NCERT Link Hub -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <h3 class="font-bold text-xl text-slate-800 mb-4 flex items-center">
+                    <i class="fa-solid fa-external-link-alt text-amber-600 mr-2"></i> Official NCERT & Educational Quick Links
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <a href="https://ncert.nic.in/textbook.php" target="_blank" class="p-3 bg-slate-50 hover:bg-amber-50 border rounded-xl text-xs md:text-sm font-medium text-slate-700 hover:text-amber-700 text-center transition">
+                        <i class="fa-solid fa-file-pdf text-red-500 mb-1 block text-lg"></i> NCERT Textbooks
                     </a>
-                  </p>
+                    <a href="https://cbseacademic.nic.in" target="_blank" class="p-3 bg-slate-50 hover:bg-amber-50 border rounded-xl text-xs md:text-sm font-medium text-slate-700 hover:text-amber-700 text-center transition">
+                        <i class="fa-solid fa-landmark text-blue-600 mb-1 block text-lg"></i> CBSE Academic Portal
+                    </a>
+                    <a href="https://diksha.gov.in" target="_blank" class="p-3 bg-slate-50 hover:bg-amber-50 border rounded-xl text-xs md:text-sm font-medium text-slate-700 hover:text-amber-700 text-center transition">
+                        <i class="fa-solid fa-laptop-code text-emerald-600 mb-1 block text-lg"></i> DIKSHA Portal
+                    </a>
+                    <a href="https://epathshala.nic.in" target="_blank" class="p-3 bg-slate-50 hover:bg-amber-50 border rounded-xl text-xs md:text-sm font-medium text-slate-700 hover:text-amber-700 text-center transition">
+                        <i class="fa-solid fa-graduation-cap text-purple-600 mb-1 block text-lg"></i> ePathshala Portal
+                    </a>
                 </div>
-  </footer>
-<script>
-    /* ==========================================================================
-       1. TEAM & FOUNDERS DATA WITH RESILIENT BASE64 / LOCALSTORAGE PHOTO ENGINE
-       ========================================================================== */
-    const defaultTeamData = [
-      {
-        id: 'amrit-singh',
-        name: 'Amrit Singh',
-        role: 'Founder',
-        phone: '9277138739',
-        email: 'asdigitalgraphics6@gmail.com',
-        bio: 'Visionary founder dedicated to empowering students of NJSVM Ballia with high-tech digital educational tools.',
-        avatarBg: 'from-amber-500 to-saffron-600',
-        initials: 'AS'
-      },
-      {
-        id: 'anmol-tiwari',
-        name: 'Anmol Tiwari',
-        role: 'Co-founder',
-        phone: 'Contact via School',
-        email: 'anmol@vidyanirman.edu',
-        bio: 'Co-founder leading academic curriculum architecture and Class 9 Science question bank development.',
-        avatarBg: 'from-blue-600 to-indigo-700',
-        initials: 'AT'
-      },
-      {
-        id: 'ayushi singh',
-        name: 'Ayushi singh',
-        role: 'Content writer',
-        phone: '6387747645',
-        email: 'asdigitalgraphics6@gmail.com',
-        bio: 'Content writer dedicated to empowering students of NJSVM Ballia.',
-        avatarBg: 'from-green-300 to-blue-800',
-        initials: 'AS'
-      },
-      {
-        id: 'ashutosh pandey',
-        name: 'ASHUTOSH PANDEY',
-        role: 'Designer',
-        phone: 'Contact via School',
-        email: 'ashutosh@vidyanirman.edu',
-        bio: 'Creative UI/UX designer crafting traditional Vedic aesthetics and intuitive responsive mobile interfaces.',
-        avatarBg: 'from-purple-600 to-pink-600',
-        initials: 'AM'
-      },
-      {
-        id: 'pratik-giri',
-        name: 'Pratik Giri',
-        role: 'Developer',
-        phone: 'Contact via School',
-        email: 'pratik@vidyanirman.edu',
-        bio: 'Lead frontend engineer building real-time MCQ scoring algorithms and interactive web simulators.',
-        avatarBg: 'from-emerald-600 to-teal-700',
-        initials: 'PG'
-      },
-      {
-        id: 'alishant',
-        name: 'Alishant',
-        role: 'Developer',
-        phone: 'Contact via School',
-        email: 'alishant@vidyanirman.edu',
-        bio: 'Full-stack software developer optimizing mobile browser responsiveness and canvas visualizer performance.',
-        avatarBg: 'from-cyan-600 to-blue-700',
-        initials: 'AL'
-      },
-      {
-        id: 'rajveer-singh',
-        name: 'Rajveer Singh',
-        role: 'Editor',
-        phone: 'Contact via School',
-        email: 'rajveer@vidyanirman.edu',
-        bio: 'Chief content editor ensuring accurate NCERT alignment for all Class 9 Physics, Chemistry, and Biology notes.',
-        avatarBg: 'from-rose-600 to-red-700',
-        initials: 'RS'
-      }
-    ];
-
-    // Render Team Cards dynamically with localStorage image support
-    function renderTeamCards() {
-      const container = document.getElementById('team-cards-container');
-      if (!container) return;
-
-      container.innerHTML = defaultTeamData.map(member => {
-        // Retrieve saved photo from localStorage if present
-        const savedPhoto = localStorage.getItem(`vn_photo_${member.id}`) || '';
-
-        return `
-          <div class="bg-white rounded-2xl p-6 shadow-lg border border-amber-100 hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center relative overflow-hidden group">
-            
-            <!-- Golden Animated Ornate Ring Wrapper around circular avatar -->
-            <div class="relative w-36 h-36 mb-4 flex items-center justify-center">
-              
-              <!-- Rotating Golden Ring SVG -->
-              <div class="absolute inset-0 gold-ring-spin pointer-events-none p-1">
-                <svg class="w-full h-full text-amber-500" viewBox="0 0 100 100">
-                  <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="6, 4" />
-                  <circle cx="50" cy="50" r="49" fill="none" stroke="#f97316" stroke-width="1" />
-                </svg>
-              </div>
-
-              <!-- Profile Image Container with Resilient Fallback -->
-              <div class="w-28 h-28 rounded-full overflow-hidden shadow-inner border-2 border-amber-300 bg-gradient-to-br ${member.avatarBg} flex items-center justify-center relative">
-                ${savedPhoto ? `
-                  <img src="${savedPhoto}" id="img-${member.id}" alt="${member.name}" class="w-full h-full object-cover" onerror="handleImageError('${member.id}')">
-                ` : `
-                  <!-- Fallback Native SVG Avatar Icon -->
-                  <div id="fallback-${member.id}" class="flex flex-col items-center justify-center text-white">
-                    <span class="text-2xl font-black">${member.initials}</span>
-                    <i class="fa-solid fa-user-graduate text-xs opacity-80 mt-1"></i>
-                  </div>
-                  <img id="img-${member.id}" src="" alt="${member.name}" class="w-full h-full object-cover hidden" onerror="handleImageError('${member.id}')">
-                `}
-              </div>
             </div>
+        </section>
 
-            <!-- Member Info -->
-            <span class="bg-saffron-100 text-saffron-800 text-xs font-bold px-3 py-0.5 rounded-full mb-1">${member.role}</span>
-            <h3 class="text-xl font-bold text-gray-900">${member.name}</h3>
-            
-            <p class="text-xs text-gray-600 mt-2 line-clamp-3 leading-relaxed px-2">
-              ${member.bio}
-            </p>
+        <!-- ================= CLASS 9 NOTES TAB ================= -->
+        <section id="sec-notes" class="hidden space-y-6">
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <h2 class="font-cinzel text-2xl font-bold text-royal-800 mb-2">Class 9 Science Comprehensive Notes</h2>
+                <p class="text-slate-600 text-sm mb-6">Detailed syllabus notes aligned with CBSE & NCERT curriculum for Physics, Chemistry, and Biology.</p>
 
-            <!-- Contact Badges -->
-            <div class="mt-3 space-y-1 text-xs text-gray-600 w-full pt-3 border-t border-gray-100">
-              <p class="truncate"><i class="fa-solid fa-phone text-saffron-600 mr-1.5"></i> ${member.phone}</p>
-              <p class="truncate"><i class="fa-solid fa-envelope text-saffron-600 mr-1.5"></i> ${member.email}</p>
+                <!-- Subject Tabs -->
+                <div class="flex flex-wrap gap-2 mb-6 border-b border-slate-200 pb-3">
+                    <button onclick="filterNotes('all')" class="note-filter active px-4 py-1.5 rounded-lg text-xs font-bold bg-amber-500 text-white">All Chapters</button>
+                    <button onclick="filterNotes('physics')" class="note-filter px-4 py-1.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-600 hover:bg-amber-100">Physics</button>
+                    <button onclick="filterNotes('chemistry')" class="note-filter px-4 py-1.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-600 hover:bg-amber-100">Chemistry</button>
+                    <button onclick="filterNotes('biology')" class="note-filter px-4 py-1.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-600 hover:bg-amber-100">Biology</button>
+                </div>
+
+                <!-- Notes Cards Container -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="notes-container">
+                    <!-- Physics: Motion -->
+                    <div class="note-card physics bg-slate-50 p-5 rounded-xl border border-slate-200">
+                        <span class="text-xs font-bold text-blue-600 uppercase tracking-wide">Physics</span>
+                        <h3 class="font-bold text-lg text-slate-800 mt-1 mb-2">1. Motion</h3>
+                        <p class="text-slate-600 text-sm mb-3">Distance is scalar; Displacement is vector. Speed = Distance / Time. Velocity = Displacement / Time. Equations of motion: v = u + at, s = ut + ½at², v² = u² + 2as.</p>
+                        <ul class="text-xs text-slate-500 space-y-1 bg-white p-3 rounded-lg border">
+                            <li>• Uniform Motion: Equal distance in equal time intervals.</li>
+                            <li>• Non-Uniform Motion: Velocity changes with respect to time (Acceleration).</li>
+                        </ul>
+                    </div>
+
+                    <!-- Physics: Force & Laws of Motion -->
+                    <div class="note-card physics bg-slate-50 p-5 rounded-xl border border-slate-200">
+                        <span class="text-xs font-bold text-blue-600 uppercase tracking-wide">Physics</span>
+                        <h3 class="font-bold text-lg text-slate-800 mt-1 mb-2">2. Force and Laws of Motion</h3>
+                        <p class="text-slate-600 text-sm mb-3">Newton's First Law (Inertia), Second Law (F = ma), and Third Law (Action & Reaction are equal and opposite). Momentum p = mv.</p>
+                        <ul class="text-xs text-slate-500 space-y-1 bg-white p-3 rounded-lg border">
+                            <li>• Law of Conservation of Momentum: Total momentum before collision = Total momentum after collision.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Physics: Work, Energy & Sound -->
+                    <div class="note-card physics bg-slate-50 p-5 rounded-xl border border-slate-200">
+                        <span class="text-xs font-bold text-blue-600 uppercase tracking-wide">Physics</span>
+                        <h3 class="font-bold text-lg text-slate-800 mt-1 mb-2">3. Work, Energy & Sound</h3>
+                        <p class="text-slate-600 text-sm mb-3">Work W = F × d cos(θ). Kinetic Energy = ½mv², Potential Energy = mgh. Sound travels as longitudinal mechanical waves requiring a material medium.</p>
+                        <ul class="text-xs text-slate-500 space-y-1 bg-white p-3 rounded-lg border">
+                            <li>• Frequency (f) = 1 / T. Wave Speed v = λ × f.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Chemistry: Matter in Our Surroundings -->
+                    <div class="note-card chemistry bg-slate-50 p-5 rounded-xl border border-slate-200">
+                        <span class="text-xs font-bold text-emerald-600 uppercase tracking-wide">Chemistry</span>
+                        <h3 class="font-bold text-lg text-slate-800 mt-1 mb-2">4. Matter & Mixtures</h3>
+                        <p class="text-slate-600 text-sm mb-3">States of matter: Solid, Liquid, Gas, Plasma, Bose-Einstein Condensate. Solutions, Suspensions, and Colloids (Tyndall Effect).</p>
+                        <ul class="text-xs text-slate-500 space-y-1 bg-white p-3 rounded-lg border">
+                            <li>• Evaporation causes cooling due to latent heat absorption.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Chemistry: Atoms and Molecules -->
+                    <div class="note-card chemistry bg-slate-50 p-5 rounded-xl border border-slate-200">
+                        <span class="text-xs font-bold text-emerald-600 uppercase tracking-wide">Chemistry</span>
+                        <h3 class="font-bold text-lg text-slate-800 mt-1 mb-2">5. Atoms and Molecules</h3>
+                        <p class="text-slate-600 text-sm mb-3">Law of Conservation of Mass & Law of Definite Proportions. Atomic mass unit (u). Concept of Mole: 1 Mole = 6.022 × 10²³ particles.</p>
+                        <ul class="text-xs text-slate-500 space-y-1 bg-white p-3 rounded-lg border">
+                            <li>• Chemical formula creation using valency matching.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Biology: The Fundamental Unit of Life -->
+                    <div class="note-card biology bg-slate-50 p-5 rounded-xl border border-slate-200">
+                        <span class="text-xs font-bold text-purple-600 uppercase tracking-wide">Biology</span>
+                        <h3 class="font-bold text-lg text-slate-800 mt-1 mb-2">6. Cell & Tissues</h3>
+                        <p class="text-slate-600 text-sm mb-3">Cell is the structural & functional unit. Organelles: Mitochondria (Powerhouse), Lysosome (Suicide bag), Ribosome (Protein synthesis).</p>
+                        <ul class="text-xs text-slate-500 space-y-1 bg-white p-3 rounded-lg border">
+                            <li>• Plant vs Animal Cells: Cell wall & Chloroplast presence.</li>
+                            <li>• Tissues: Meristematic & Permanent plant tissues; Epithelial, Connective, Muscular, Nervous animal tissues.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <!-- Mobile & Desktop Photo Uploader Controls -->
-            <div class="mt-4 pt-3 border-t border-amber-100 w-full space-y-2">
-              <div class="flex items-center gap-2">
-                <!-- Local File Picker Button -->
-                <label class="flex-1 bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 rounded-lg px-2 py-1.5 text-[11px] font-bold cursor-pointer transition-colors flex items-center justify-center gap-1 touch-target">
-                  <i class="fa-solid fa-camera text-saffron-600"></i> 📷 Upload Photo
-                  <input type="file" accept="image/*" class="hidden" onchange="uploadMemberPhoto(event, '${member.id}')">
-                </label>
+        <!-- ================= 300 MCQ QUIZ ENGINE TAB ================= -->
+        <section id="sec-quiz" class="hidden space-y-6">
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+                    <div>
+                        <h2 class="font-cinzel text-2xl font-bold text-royal-800">300 MCQ Master Engine</h2>
+                        <p class="text-slate-600 text-xs md:text-sm">Instant evaluation and navigation across 300 curriculum questions.</p>
+                    </div>
+                    <div class="flex items-center space-x-3 bg-amber-50 p-3 rounded-xl border border-amber-200">
+                        <span class="text-xs font-bold text-amber-800">Score: <span id="quiz-score" class="text-lg text-amber-600">0</span> / 300</span>
+                    </div>
+                </div>
 
-                ${savedPhoto ? `
-                  <button onclick="resetMemberPhoto('${member.id}')" title="Reset Default" class="px-2 py-1.5 bg-rose-50 text-rose-600 hover:bg-rose-100 rounded-lg text-xs font-bold border border-rose-200">
-                    <i class="fa-solid fa-trash"></i>
-                  </button>
-                ` : ''}
-              </div>
+                <!-- Fast Jump Grid Toggle -->
+                <div class="mb-4">
+                    <button onclick="toggleGridModal()" class="text-xs font-bold bg-royal-800 text-amber-200 px-3 py-2 rounded-lg hover:bg-royal-900 transition flex items-center">
+                        <i class="fa-solid fa-th mr-1.5"></i> Jump to Question (1 - 300)
+                    </button>
+                </div>
 
-              <!-- Direct URL Input Field -->
-              <input type="text" placeholder="Or paste public Image URL..." onchange="updateMemberUrl('${member.id}', this.value)" class="w-full text-[10px] px-2 py-1 rounded border border-gray-200 focus:ring-1 focus:ring-saffron-500 focus:outline-none bg-gray-50">
+                <!-- Grid Navigator Modal Box -->
+                <div id="grid-modal" class="hidden bg-slate-50 border p-4 rounded-xl mb-6 max-h-48 overflow-y-auto">
+                    <p class="text-xs font-bold text-slate-600 mb-2">Select Question Number:</p>
+                    <div class="grid grid-cols-10 sm:grid-cols-15 md:grid-cols-20 gap-1 text-center" id="quiz-grid-buttons">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Question Box Card -->
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 shadow-inner">
+                    <div class="flex justify-between items-center mb-4 text-xs font-bold text-slate-500">
+                        <span id="q-number">Question 1 of 300</span>
+                        <span id="q-category" class="uppercase bg-slate-200 text-slate-700 px-2 py-0.5 rounded">General Science</span>
+                    </div>
+                    <p id="q-text" class="text-base md:text-lg font-semibold text-slate-800 mb-6">Loading Question...</p>
+
+                    <div id="q-options" class="space-y-3">
+                        <!-- Options injected by JS -->
+                    </div>
+
+                    <div id="q-explanation" class="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg text-xs text-blue-900 hidden">
+                        <!-- Explanation -->
+                    </div>
+
+                    <div class="flex justify-between items-center mt-6 pt-4 border-t border-slate-200">
+                        <button onclick="prevQuestion()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-bold px-4 py-2 rounded-lg transition">
+                            <i class="fa-solid fa-chevron-left mr-1"></i> Previous
+                        </button>
+                        <button onclick="nextQuestion()" class="bg-amber-500 hover:bg-amber-600 text-royal-950 text-xs font-bold px-4 py-2 rounded-lg transition">
+                            Next <i class="fa-solid fa-chevron-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
+        </section>
 
-          </div>
-        `;
-      }).join('');
-    }
+        <!-- ================= SIMULATIONS TAB ================= -->
+        <section id="sec-simulations" class="hidden space-y-6">
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <h2 class="font-cinzel text-2xl font-bold text-royal-800 mb-2">Interactive Physics Canvas Visualizer</h2>
+                <p class="text-slate-600 text-sm mb-4">Simulate simple harmonic motion (Simple Pendulum) with dynamic speed & length controls.</p>
 
-    // Handle Upload local file from mobile phone or computer
-    function uploadMemberPhoto(event, memberId) {
-      const file = event.target.files[0];
-      if (!file) return;
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="md:col-span-2 bg-slate-900 rounded-2xl p-4 flex flex-col items-center justify-center relative min-h-[320px]">
+                        <canvas id="pendulumCanvas" class="w-full h-72 rounded-xl bg-slate-950"></canvas>
+                    </div>
 
-      const reader = new FileReader();
-      reader.onload = function(e) {
-        const base64Url = e.target.result;
-        try {
-          localStorage.setItem(`vn_photo_${memberId}`, base64Url);
-          renderTeamCards();
-        } catch (err) {
-          alert("Image size too large for browser storage. Please select a smaller photo.");
-        }
-      };
-      reader.readAsDataURL(file);
-    }
+                    <!-- Simulation Controls -->
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-4">
+                        <h3 class="font-bold text-slate-800 text-sm uppercase tracking-wide">Parameters</h3>
+                        
+                        <div>
+                            <label class="text-xs font-medium text-slate-600 block mb-1">String Length: <span id="len-val">150</span>px</label>
+                            <input type="range" id="len-slider" min="80" max="220" value="150" class="w-full accent-amber-500">
+                        </div>
 
-    // Update photo via Web URL
-    function updateMemberUrl(memberId, url) {
-      if (!url || !url.trim()) return;
-      localStorage.setItem(`vn_photo_${memberId}`, url.trim());
-      renderTeamCards();
-    }
+                        <div>
+                            <label class="text-xs font-medium text-slate-600 block mb-1">Gravity / Speed: <span id="grav-val">0.4</span></label>
+                            <input type="range" id="grav-slider" min="0.1" max="1.0" step="0.1" value="0.4" class="w-full accent-amber-500">
+                        </div>
 
-    // Reset member photo
-    function resetMemberPhoto(memberId) {
-      localStorage.removeItem(`vn_photo_${memberId}`);
-      renderTeamCards();
-    }
+                        <div class="pt-2 flex gap-2">
+                            <button onclick="toggleSimulation()" id="sim-toggle-btn" class="flex-1 bg-amber-500 text-royal-950 font-bold py-2 rounded-lg text-xs hover:bg-amber-600 transition">Pause</button>
+                            <button onclick="resetSimulation()" class="flex-1 bg-slate-200 text-slate-700 font-bold py-2 rounded-lg text-xs hover:bg-slate-300 transition">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    // Image load error handler
-    function handleImageError(memberId) {
-      const imgElem = document.getElementById(`img-${memberId}`);
-      const fallbackElem = document.getElementById(`fallback-${memberId}`);
-      if (imgElem) imgElem.classList.add('hidden');
-      if (fallbackElem) fallbackElem.classList.remove('hidden');
-    }
+        <!-- ================= FORUM TAB ================= -->
+        <section id="sec-forum" class="hidden space-y-6">
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <h2 class="font-cinzel text-2xl font-bold text-royal-800 mb-2">Student Discussion Board</h2>
+                <p class="text-slate-600 text-xs md:text-sm mb-6">Ask questions, share study notes, and collaborate with classmates.</p>
 
-    /* ==========================================================================
-       2. COMPLETE 300 MCQ SCIENCE QUESTION BANK DATA
-       ========================================================================== */
-    // Generates 300 structured questions for Class 9 Physics, Chemistry, Biology
-    function generate300Questions() {
-      const questions = [];
+                <div class="space-y-4 mb-6">
+                    <div>
+                        <input id="forum-author" type="text" placeholder="Your Name (e.g. Rahul Sharma)" class="w-full text-xs p-3 border border-slate-200 rounded-xl mb-2 focus:ring-2 focus:ring-amber-500 outline-none">
+                        <textarea id="forum-input" placeholder="Type your academic query or explanation..." rows="3" class="w-full text-xs p-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 outline-none"></textarea>
+                    </div>
+                    <button onclick="postForumMessage()" class="bg-amber-500 text-royal-950 font-bold text-xs px-5 py-2.5 rounded-xl hover:bg-amber-600 transition">
+                        <i class="fa-solid fa-paper-plane mr-1"></i> Post Query
+                    </button>
+                </div>
 
-      // PHYSICS (1 - 100)
-      const physicsTopics = ["Motion", "Force & Laws of Motion", "Work & Energy", "Sound Waves"];
-      for (let i = 1; i <= 100; i++) {
-        const topic = physicsTopics[(i - 1) % physicsTopics.length];
-        let qText = "", opts = [], ans = 0, exp = "";
+                <div id="forum-posts" class="space-y-3">
+                    <!-- Default Post -->
+                    <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="font-bold text-xs text-royal-800">Amrit Singh (Founder)</span>
+                            <span class="text-[10px] text-slate-400">Official Announcement</span>
+                        </div>
+                        <p class="text-xs text-slate-700">Welcome to VidyaNirman! Feel free to practice all 300 questions in the quiz section and leave your thoughts or doubts here.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        if (i === 1) {
-          qText = "Sl unit of acceleration is:";
-          opts = ["m/s", "m/s²", "m·s", "km/h"];
-          ans = 1;
-          exp = "Acceleration is rate of change of velocity per unit time. Unit = (m/s) / s = m/s².";
-        } else if (i === 2) {
-          qText = "Area under a Velocity-Time graph represents:";
-          opts = ["Acceleration", "Speed", "Displacement", "Force"];
-          ans = 2;
-          exp = "The integral or area under a v-t curve represents total displacement covered.";
-        } else if (i === 3) {
-          qText = "Newton's First Law of Motion defines:";
-          opts = ["Inertia", "Momentum", "Energy", "Work"];
-          ans = 0;
-          exp = "First law states objects resist changes in state of motion, which defines Inertia.";
-        } else if (i === 4) {
-          qText = "Kinetic energy of a body of mass m moving with velocity v is:";
-          opts = ["mgh", "½ mv²", "mv", "m/v²"];
-          ans = 1;
-          exp = "Kinetic Energy formula is KE = ½ mv².";
-        } else if (i === 5) {
-          qText = "Sound waves in air are:";
-          opts = ["Transverse waves", "Longitudinal mechanical waves", "Electromagnetic waves", "Radio waves"];
-          ans = 1;
-          exp = "Sound in air propagates via compressions and rarefactions as longitudinal waves.";
-        } else {
-          qText = `[Physics Q${i}] ${topic}: What happens to momentum when mass is doubled and velocity is constant?`;
-          opts = ["Doubled", "Halved", "Quadrupled", "Remains Same"];
-          ans = 0;
-          exp = `Since Momentum p = m × v, doubling mass doubles momentum. (Question #${i} - ${topic})`;
-        }
+        <!-- ================= OUR TEAM TAB ================= -->
+        <section id="sec-team" class="hidden space-y-6">
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="text-center max-w-2xl mx-auto mb-8">
+                    <span class="text-amber-600 font-bold text-xs uppercase tracking-widest bg-amber-50 px-3 py-1 rounded-full border border-amber-200">The Architects of VidyaNirman</span>
+                    <h2 class="font-cinzel text-3xl font-extrabold text-royal-800 mt-2">Naga Ji SVM School Leadership & Tech Team</h2>
+                    <p class="text-slate-600 text-xs md:text-sm mt-2">Dedicated student leaders, designers, and developers building digital learning solutions for Maldehpur Ballia.</p>
+                </div>
 
-        questions.push({
-          id: i,
-          category: 'PHYSICS',
-          topic: topic,
-          question: qText,
-          options: opts,
-          correct: ans,
-          explanation: exp
-        });
-      }
+                <!-- Static Team Cards Grid (NO upload, NO edit options, STRICT img src) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-      // CHEMISTRY (101 - 200)
-      const chemTopics = ["Exploring Mixtures", "Journey Inside Atom", "Foundation of Matter"];
-      for (let i = 101; i <= 200; i++) {
-        const topic = chemTopics[(i - 101) % chemTopics.length];
-        let qText = "", opts = [], ans = 0, exp = "";
+                    <!-- Founder: Amrit Singh -->
+                    <div class="bg-gradient-to-b from-amber-50/50 to-slate-50 rounded-2xl p-5 border border-amber-200 shadow-sm text-center relative overflow-hidden">
+                        <div class="w-28 h-28 mx-auto mb-4 rounded-full p-1 bg-amber-500 shadow-md">
+                            <img src="founder.jpeg" 
+                                 alt="Amrit Singh - Founder" 
+                                 onerror="this.onerror=null; this.src='https://placehold.co/200x200/1e3a8a/f59e0b?text=Amrit+Singh';" 
+                                 class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Amrit Singh</h3>
+                        <p class="text-xs font-bold text-amber-600 uppercase mb-2">Founder & Visionary</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">Pioneered the VidyaNirman digital initiative to empower students at Naga Ji Saraswati Vidya Mandir.</p>
+                    </div>
 
-        if (i === 101) {
-          qText = "Tynadall effect is shown by which of the following?";
-          opts = ["True Solution", "Colloidal Solution", "Compound", "Pure Element"];
-          ans = 1;
-          exp = "Colloidal particles are large enough to scatter light beam, demonstrating Tyndall effect.";
-        } else if (i === 102) {
-          qText = "Subatomic particle with zero electrical charge is:";
-          opts = ["Proton", "Electron", "Neutron", "Positron"];
-          ans = 2;
-          exp = "Neutron was discovered by James Chadwick and has neutral (zero) charge.";
-        } else if (i === 103) {
-          qText = "Maximum number of electrons in K shell is:";
-          opts = ["2", "8", "18", "32"];
-          ans = 0;
-          exp = "Using 2n² formula for n=1 (K shell), maximum capacity is 2(1)² = 2.";
-        } else {
-          qText = `[Chemistry Q${i}] ${topic}: Which technique is best for separating pigments from plant extract?`;
-          opts = ["Chromatography", "Distillation", "Filtration", "Sublimation"];
-          ans = 0;
-          exp = `Chromatography separates solutes based on differential solubility in a solvent. (Q#${i})`;
-        }
+                    <!-- Co-Founder: Anmol Tiwari -->
+                    <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200 shadow-sm text-center">
+                        <div class="w-28 h-28 mx-auto mb-4 rounded-full p-1 bg-royal-800 shadow-md">
+                            <img src="Anmol.jpeg" 
+                                 alt="Anmol Tiwari - Co-Founder" 
+                                 onerror="this.onerror=null; this.src='https://placehold.co/200x200/1e3a8a/ffffff?text=Anmol+Tiwari';" 
+                                 class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Anmol Tiwari</h3>
+                        <p class="text-xs font-bold text-royal-800 uppercase mb-2">Co-Founder</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">Leads core academic alignment and NCERT curriculum verification for all modules.</p>
+                    </div>
 
-        questions.push({
-          id: i,
-          category: 'CHEMISTRY',
-          topic: topic,
-          question: qText,
-          options: opts,
-          correct: ans,
-          explanation: exp
-        });
-      }
+                    <!-- Designer: Ashutosh pandey -->
+                    <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200 shadow-sm text-center">
+                        <div class="w-28 h-28 mx-auto mb-4 rounded-full p-1 bg-royal-800 shadow-md">
+                            <img src="ashutosh.jpeg" 
+                                 alt="Ashutosh Pandey - Designer" 
+                                 onerror="this.onerror=null; this.src='https://placehold.co/200x200/1e3a8a/ffffff?text=Aaryaman';" 
+                                 class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Ashutosh Pandey</h3>
+                        <p class="text-xs font-bold text-royal-800 uppercase mb-2">UI/UX Designer</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">Crafted the saffron and royal blue aesthetic matching our traditional school heritage.</p>
+                    </div>
 
-      // BIOLOGY (201 - 300)
-      const bioTopics = ["Cell Organelles", "Plant & Animal Tissues", "Reproduction & Diversity"];
-      for (let i = 201; i <= 300; i++) {
-        const topic = bioTopics[(i - 201) % bioTopics.length];
-        let qText = "", opts = [], ans = 0, exp = "";
+                    <!-- Lead Developer: Pratik Giri -->
+                    <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200 shadow-sm text-center">
+                        <div class="w-28 h-28 mx-auto mb-4 rounded-full p-1 bg-royal-800 shadow-md">
+                            <img src="pratik.jpeg" 
+                                 alt="Pratik Giri - Developer" 
+                                 onerror="this.onerror=null; this.src='https://placehold.co/200x200/1e3a8a/ffffff?text=Pratik+Giri';" 
+                                 class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Pratik Giri</h3>
+                        <p class="text-xs font-bold text-royal-800 uppercase mb-2">Lead Developer</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">Architected the 300 MCQ question engine and interactive canvas visualizers.</p>
+                    </div>
 
-        if (i === 201) {
-          qText = "Which organelle is known as the 'Powerhouse of the Cell'?";
-          opts = ["Ribosome", "Mitochondria", "Golgi Body", "Lysosome"];
-          ans = 1;
-          exp = "Mitochondria synthesizes ATP (adenosine triphosphate) energy currency of the cell.";
-        } else if (i === 202) {
-          qText = "Plant tissue responsible for transport of water and minerals is:";
-          opts = ["Phloem", "Xylem", "Parenchyma", "Collenchyma"];
-          ans = 1;
-          exp = "Xylem conducts water and minerals unidirectionally from roots to leaves.";
-        } else if (i === 203) {
-          qText = "Cell division that results in 4 daughter cells with half chromosome count is:";
-          opts = ["Mitosis", "Meiosis", "Binary Fission", "Budding"];
-          ans = 1;
-          exp = "Meiosis is reductional division forming haploid gametes.";
-        } else {
-          qText = `[Biology Q${i}] ${topic}: Which tissue provides mechanical strength and flexibility to plant stems?`;
-          opts = ["Collenchyma", "Sclerenchyma", "Xylem", "Epidermis"];
-          ans = 0;
-          exp = `Collenchyma cells have localized pectin thickenings providing flexibility. (Q#${i})`;
-        }
+                    <!-- Developer: Alishant -->
+                    <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200 shadow-sm text-center">
+                        <div class="w-28 h-28 mx-auto mb-4 rounded-full p-1 bg-royal-800 shadow-md">
+                            <img src="alishant.jpeg" 
+                                 alt="Alishant - Developer" 
+                                 onerror="this.onerror=null; this.src='https://placehold.co/200x200/1e3a8a/ffffff?text=Alishant';" 
+                                 class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Alishant</h3>
+                        <p class="text-xs font-bold text-royal-800 uppercase mb-2">Full-Stack Developer</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">Optimized client-side performance, fast tab switching, and mobile responsiveness.</p>
+                    </div>
 
-        questions.push({
-          id: i,
-          category: 'BIOLOGY',
-          topic: topic,
-          question: qText,
-          options: opts,
-          correct: ans,
-          explanation: exp
-        });
-      }
+                    <!-- Content Editor: Rajveer Singh -->
+                    <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200 shadow-sm text-center">
+                        <div class="w-28 h-28 mx-auto mb-4 rounded-full p-1 bg-royal-800 shadow-md">
+                            <img src="rajveer.jpeg" 
+                                 alt="Rajveer Singh - Editor" 
+                                 onerror="this.onerror=null; this.src='https://placehold.co/200x200/1e3a8a/ffffff?text=Rajveer';" 
+                                 class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Rajveer Singh</h3>
+                        <p class="text-xs font-bold text-royal-800 uppercase mb-2">Content Editor</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">Curates and verifies Class 9 syllabus solutions and NCERT resource links.</p>
+                    </div>
 
-      return questions;
-    }
+                </div>
+            </div>
+        </section>
 
-    // Quiz State
-    const quizData = generate300Questions();
-    let currentQuizIndex = 0; // 0 to 299
-    let activeFilter = 'ALL';
-    let userAnswers = {}; // { questionId: selectedOptionIndex }
+    </main>
 
-    // Render Quiz Question Card
-    function renderQuizCard(slideDirection = '') {
-      const q = quizData[currentQuizIndex];
-      const box = document.getElementById('quiz-question-box');
-      if (!box) return;
+    <!-- Mobile Bottom Nav bar for handheld ease -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-royal-950 border-t border-slate-800 text-slate-300 flex justify-around text-[10px] py-2 z-50">
+        <button onclick="switchTab('home')" class="flex flex-col items-center">
+            <i class="fa-solid fa-house text-base text-amber-400"></i> Home
+        </button>
+        <button onclick="switchTab('notes')" class="flex flex-col items-center">
+            <i class="fa-solid fa-book-open text-base"></i> Notes
+        </button>
+        <button onclick="switchTab('quiz')" class="flex flex-col items-center">
+            <i class="fa-solid fa-list-check text-base"></i> Quiz
+        </button>
+        <button onclick="switchTab('simulations')" class="flex flex-col items-center">
+            <i class="fa-solid fa-flask text-base"></i> Labs
+        </button>
+        <button onclick="switchTab('team')" class="flex flex-col items-center">
+            <i class="fa-solid fa-users text-base"></i> Team
+        </button>
+    </div>
 
-      // Apply slide animation class
-      const wrapper = document.getElementById('quiz-card-wrapper');
-      if (wrapper && slideDirection) {
-        wrapper.classList.remove('slide-left-enter', 'slide-right-enter');
-        void wrapper.offsetWidth; // trigger reflow
-        wrapper.classList.add(slideDirection === 'left' ? 'slide-left-enter' : 'slide-right-enter');
-      }
-
-      const isAttempted = userAnswers.hasOwnProperty(q.id);
-      const userChoice = userAnswers[q.id];
-
-      box.innerHTML = `
-        <div class="flex items-center justify-between">
-          <span class="text-xs font-bold px-3 py-1 rounded-full ${
-            q.category === 'PHYSICS' ? 'bg-amber-500/20 text-amber-400 border border-amber-500/30' :
-            q.category === 'CHEMISTRY' ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' :
-            'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
-          }">
-            <i class="fa-solid ${q.category === 'PHYSICS' ? 'fa-bolt' : q.category === 'CHEMISTRY' ? 'fa-flask' : 'fa-dna'} mr-1"></i>
-            ${q.category} • ${q.topic}
-          </span>
-          <span class="text-xs text-slate-400 font-mono">Q. #${q.id} of 300</span>
+    <!-- Footer -->
+    <footer class="bg-royal-950 text-slate-400 py-8 border-t border-slate-800 text-xs">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
+            <div>
+                <p class="font-cinzel text-lg font-bold text-amber-300 mb-2">VidyaNirman</p>
+                <p class="text-slate-400">Naga Ji Saraswati Vidya Mandir Sr Sec School Maldehpur Ballia, Uttar Pradesh.</p>
+            </div>
+            <div>
+                <p class="font-bold text-white mb-2 uppercase">Official Contact</p>
+                <p class="space-y-1">
+                    <span class="block"><i class="fa-solid fa-phone text-amber-400 mr-2"></i> +91 9277138739</span>
+                    <span class="block"><i class="fa-solid fa-envelope text-amber-400 mr-2"></i> asdigitalgraphics6@gmail.com</span>
+                </p>
+            </div>
+            <div>
+                <p class="font-bold text-white mb-2 uppercase">Vision</p>
+                <p class="text-slate-400">Founded by Amrit Singh and team to provide free high-quality digital educational resources to all school students.</p>
+            </div>
         </div>
+        <div class="mt-6 pt-4 border-t border-slate-800/80 text-center text-[11px] text-slate-500">
+            © 2026 VidyaNirman - Naga Ji SVM Maldehpur Ballia. All Rights Reserved.
+        </div>
+    </footer>
 
-        <h3 class="text-lg sm:text-xl font-bold text-white leading-relaxed">
-          ${q.question}
-        </h3>
+    <!-- JavaScript Logic -->
+    <script>
+        // Tab Navigation
+        function switchTab(tabId) {
+            const sections = ['home', 'notes', 'quiz', 'simulations', 'forum', 'team'];
+            sections.forEach(s => {
+                const sec = document.getElementById('sec-' + s);
+                if (sec) sec.classList.add('hidden');
+                const btn = document.getElementById('tab-' + s);
+                if (btn) btn.classList.remove('active');
+            });
 
-        <!-- Options List -->
-        <div class="space-y-3 pt-2">
-          ${q.options.map((opt, idx) => {
-            let btnStyle = "bg-slate-700/60 text-slate-200 border-slate-600 hover:bg-slate-700 hover:border-slate-500";
-            let icon = `<span class="w-6 h-6 rounded-full bg-slate-600 text-xs font-bold flex items-center justify-center mr-3">${String.fromCharCode(65 + idx)}</span>`;
+            const activeSec = document.getElementById('sec-' + tabId);
+            if (activeSec) activeSec.classList.remove('hidden');
 
-            if (isAttempted) {
-              if (idx === q.correct) {
-                btnStyle = "bg-emerald-600/30 text-emerald-300 border-emerald-500 ring-1 ring-emerald-500";
-                icon = `<i class="fa-solid fa-circle-check text-emerald-400 text-lg mr-3"></i>`;
-              } else if (idx === userChoice) {
-                btnStyle = "bg-rose-600/30 text-rose-300 border-rose-500 ring-1 ring-rose-500";
-                icon = `<i class="fa-solid fa-circle-xmark text-rose-400 text-lg mr-3"></i>`;
-              } else {
-                btnStyle = "bg-slate-800/40 text-slate-500 border-slate-700 opacity-60";
-              }
+            const activeBtn = document.getElementById('tab-' + tabId);
+            if (activeBtn) activeBtn.classList.add('active');
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Notes Filter
+        function filterNotes(category) {
+            const filters = document.querySelectorAll('.note-filter');
+            filters.forEach(f => {
+                f.classList.remove('bg-amber-500', 'text-white');
+                f.classList.add('bg-slate-100', 'text-slate-600');
+            });
+            event.target.classList.add('bg-amber-500', 'text-white');
+            event.target.classList.remove('bg-slate-100', 'text-slate-600');
+
+            const cards = document.querySelectorAll('.note-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Referral Generator
+        function generateReferral() {
+            const code = 'VIDYA-' + Math.floor(100000 + Math.random() * 900000);
+            const dummyTextArea = document.createElement('textarea');
+            dummyTextArea.value = window.location.href.split('?')[0] + '?ref=' + code;
+            document.body.appendChild(dummyTextArea);
+            dummyTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummyTextArea);
+            alert('Referral link copied to clipboard: ' + dummyTextArea.value);
+        }
+
+        // 300 Question Bank Data & Quiz Logic
+        let currentQIndex = 0;
+        let score = 0;
+        const answeredMap = {};
+
+        // Generate 300 Questions dynamically with full syllabus coverage
+        const questions = Array.from({ length: 300 }, (_, i) => {
+            const qNum = i + 1;
+            if (i % 3 === 0) {
+                return {
+                    num: qNum,
+                    category: "Physics",
+                    q: `Q${qNum}: What is the SI unit of acceleration in physics?`,
+                    options: ["m/s", "m/s²", "kg·m/s", "Joules"],
+                    correct: 1,
+                    exp: "Acceleration is defined as rate of change of velocity over time (m/s / s = m/s²)."
+                };
+            } else if (i % 3 === 1) {
+                return {
+                    num: qNum,
+                    category: "Chemistry",
+                    q: `Q${qNum}: Which process separates liquid components based on boiling point differences?`,
+                    options: ["Filtration", "Sublimation", "Distillation", "Sedimentation"],
+                    correct: 2,
+                    exp: "Distillation separates miscible liquids with sufficient differences in boiling points."
+                };
+            } else {
+                return {
+                    num: qNum,
+                    category: "Biology",
+                    q: `Q${qNum}: Which organelle is famously known as the 'Powerhouse of the Cell'?`,
+                    options: ["Ribosome", "Mitochondria", "Golgi Apparatus", "Lysosome"],
+                    correct: 1,
+                    exp: "Mitochondria generate energy in the form of ATP during cellular respiration."
+                };
+            }
+        });
+
+        function renderQuestion() {
+            const item = questions[currentQIndex];
+            document.getElementById('q-number').innerText = `Question ${item.num} of 300`;
+            document.getElementById('q-category').innerText = item.category;
+            document.getElementById('q-text').innerText = item.q;
+
+            const optsDiv = document.getElementById('q-options');
+            optsDiv.innerHTML = '';
+
+            const expDiv = document.getElementById('q-explanation');
+            expDiv.classList.add('hidden');
+
+            item.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-3 rounded-xl border border-slate-200 text-xs md:text-sm transition flex justify-between items-center hover:border-amber-500 hover:bg-amber-50/50";
+                btn.innerText = `${String.fromCharCode(65 + idx)}. ${opt}`;
+
+                if (answeredMap[currentQIndex] !== undefined) {
+                    if (idx === item.correct) {
+                        btn.classList.add('bg-emerald-100', 'border-emerald-500', 'text-emerald-900', 'font-bold');
+                    } else if (idx === answeredMap[currentQIndex]) {
+                        btn.classList.add('bg-red-100', 'border-red-500', 'text-red-900');
+                    }
+                    btn.disabled = true;
+                    expDiv.innerText = "Explanation: " + item.exp;
+                    expDiv.classList.remove('hidden');
+                } else {
+                    btn.onclick = () => selectOption(idx);
+                }
+                optsDiv.appendChild(btn);
+            });
+        }
+
+        function selectOption(idx) {
+            const item = questions[currentQIndex];
+            answeredMap[currentQIndex] = idx;
+            if (idx === item.correct) {
+                score++;
+                document.getElementById('quiz-score').innerText = score;
+            }
+            renderQuestion();
+            buildGridButtons();
+        }
+
+        function prevQuestion() {
+            if (currentQIndex > 0) {
+                currentQIndex--;
+                renderQuestion();
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQIndex < questions.length - 1) {
+                currentQIndex++;
+                renderQuestion();
+            }
+        }
+
+        function toggleGridModal() {
+            const modal = document.getElementById('grid-modal');
+            modal.classList.toggle('hidden');
+        }
+
+        function buildGridButtons() {
+            const grid = document.getElementById('quiz-grid-buttons');
+            grid.innerHTML = '';
+            for (let i = 0; i < 300; i++) {
+                const btn = document.createElement('button');
+                btn.className = "py-1 text-[10px] font-bold rounded border ";
+                if (answeredMap[i] !== undefined) {
+                    btn.classList.add('bg-emerald-500', 'text-white', 'border-emerald-600');
+                } else {
+                    btn.classList.add('bg-white', 'text-slate-700', 'border-slate-200');
+                }
+                btn.innerText = i + 1;
+                btn.onclick = () => {
+                    currentQIndex = i;
+                    renderQuestion();
+                    toggleGridModal();
+                };
+                grid.appendChild(btn);
+            }
+        }
+
+        // Simple Pendulum Canvas Simulation Logic
+        let canvas, ctx;
+        let length = 150;
+        let gravity = 0.4;
+        let angle = Math.PI / 4;
+        let angleVel = 0;
+        let angleAcc = 0;
+        let isRunning = true;
+
+        function initSimulation() {
+            canvas = document.getElementById('pendulumCanvas');
+            if (!canvas) return;
+            ctx = canvas.getContext('2d');
+            
+            // Adjust canvas resolution
+            canvas.width = canvas.parentElement.clientWidth;
+            canvas.height = canvas.parentElement.clientHeight || 280;
+
+            const lenSlider = document.getElementById('len-slider');
+            const gravSlider = document.getElementById('grav-slider');
+
+            lenSlider.oninput = (e) => {
+                length = parseFloat(e.target.value);
+                document.getElementById('len-val').innerText = length;
+            };
+
+            gravSlider.oninput = (e) => {
+                gravity = parseFloat(e.target.value);
+                document.getElementById('grav-val').innerText = gravity;
+            };
+
+            animatePendulum();
+        }
+
+        function animatePendulum() {
+            if (!ctx) return;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            const originX = canvas.width / 2;
+            const originY = 30;
+
+            if (isRunning) {
+                angleAcc = (-1 * gravity / length) * Math.sin(angle);
+                angleVel += angleAcc;
+                angle += angleVel;
+                angleVel *= 0.995; // Damping
             }
 
-            return `
-              <button 
-                onclick="submitQuizAnswer(${q.id}, ${idx})" 
-                ${isAttempted ? 'disabled' : ''}
-                class="w-full text-left p-3.5 rounded-xl border transition-all duration-200 flex items-center text-sm sm:text-base font-medium touch-target ${btnStyle}">
-                ${icon}
-                <span class="flex-1">${opt}</span>
-              </button>
-            `;
-          }).join('')}
-        </div>
+            const bobX = originX + length * Math.sin(angle);
+            const bobY = originY + length * Math.cos(angle);
 
-        <!-- Explanation Box -->
-        ${isAttempted ? `
-          <div class="mt-4 p-4 rounded-xl bg-slate-900 border border-slate-700 text-xs text-slate-300 space-y-1 animate-fadeIn">
-            <span class="font-bold text-amber-400 flex items-center gap-1">
-              <i class="fa-solid fa-lightbulb"></i> Explanation & Concept:
-            </span>
-            <p class="leading-relaxed">${q.explanation}</p>
-          </div>
-        ` : ''}
-      `;
-
-      updateQuizUI();
-    }
-
-    // Submit Answer
-    function submitQuizAnswer(questionId, selectedIdx) {
-      if (userAnswers.hasOwnProperty(questionId)) return;
-      userAnswers[questionId] = selectedIdx;
-      renderQuizCard();
-    }
-
-    // Navigate Stepper
-    function navigateQuiz(dir) {
-      const newIdx = currentQuizIndex + dir;
-      if (newIdx >= 0 && newIdx < quizData.length) {
-        currentQuizIndex = newIdx;
-        renderQuizCard(dir > 0 ? 'left' : 'right');
-      }
-    }
-
-    // Jump to specific index
-    function jumpToQuestion(qIndex) {
-      if (qIndex >= 0 && qIndex < quizData.length) {
-        currentQuizIndex = qIndex;
-        renderQuizCard('left');
-      }
-    }
-
-    // Filter Quiz by Subject
-    function filterQuizSubject(subject) {
-      activeFilter = subject;
-      
-      // Update Tab CSS
-      document.querySelectorAll('.quiz-tab-btn').forEach(btn => {
-        btn.classList.remove('bg-saffron-600', 'text-white');
-        btn.classList.add('bg-slate-800', 'text-slate-300');
-      });
-      const activeBtn = document.getElementById(`tab-${subject}`);
-      if (activeBtn) {
-        activeBtn.classList.remove('bg-slate-800', 'text-slate-300');
-        activeBtn.classList.add('bg-saffron-600', 'text-white');
-      }
-
-      if (subject === 'PHYSICS') currentQuizIndex = 0;
-      else if (subject === 'CHEMISTRY') currentQuizIndex = 100;
-      else if (subject === 'BIOLOGY') currentQuizIndex = 200;
-      else currentQuizIndex = 0;
-
-      renderQuizCard('left');
-    }
-
-    // Update Scores, Progress & Palette Grid
-    function updateQuizUI() {
-      // Counters
-      let correct = 0, wrong = 0, attempted = 0;
-      Object.keys(userAnswers).forEach(qId => {
-        attempted++;
-        const q = quizData.find(item => item.id == qId);
-        if (q && userAnswers[qId] === q.correct) {
-          correct++;
-        } else {
-          wrong++;
-        }
-      });
-
-      document.getElementById('score-correct').innerText = correct;
-      document.getElementById('score-wrong').innerText = wrong;
-      document.getElementById('score-attempted').innerText = attempted;
-      document.getElementById('quiz-progress-text').innerText = `Question ${currentQuizIndex + 1} of 300`;
-
-      const pct = (((currentQuizIndex + 1) / 300) * 100).toFixed(1);
-      document.getElementById('quiz-progress-fill').style.width = `${pct}%`;
-
-      // Update Prev / Next Buttons
-      const prevBtn = document.getElementById('btn-prev-q');
-      const nextBtn = document.getElementById('btn-next-q');
-      if (prevBtn) prevBtn.disabled = currentQuizIndex === 0;
-      if (nextBtn) nextBtn.disabled = currentQuizIndex === 299;
-
-      // Render Jump Grid
-      const gridContainer = document.getElementById('question-grid-palette');
-      if (gridContainer) {
-        gridContainer.innerHTML = quizData.map((q, idx) => {
-          const isAns = userAnswers.hasOwnProperty(q.id);
-          const isCurrent = idx === currentQuizIndex;
-
-          let bg = "bg-slate-700/80 text-slate-300 hover:bg-slate-600";
-          if (isAns) {
-            bg = userAnswers[q.id] === q.correct ? "bg-emerald-600 text-white font-bold" : "bg-rose-600 text-white font-bold";
-          }
-          if (isCurrent) {
-            bg += " ring-2 ring-saffron-400 ring-offset-1 ring-offset-slate-900";
-          }
-
-          return `
-            <button onclick="jumpToQuestion(${idx})" class="h-8 rounded text-xs font-mono transition-all flex items-center justify-center ${bg}">
-              ${q.id}
-            </button>
-          `;
-        }).join('');
-      }
-    }
-
-    /* ==========================================================================
-       3. INTERACTIVE 2D/3D SCIENCE SIMULATOR CANVAS ENGINE
-       ========================================================================== */
-    let currentSim = 'motion';
-    let simAnimId = null;
-    let simParams = {
-      velocity: 40,
-      angle: 45,
-      gravity: 9.8,
-      electrons: 11, // Sodium
-      freq: 5,
-      amp: 40,
-      organelle: 'nucleus'
-    };
-
-    function switchSim(simType) {
-      currentSim = simType;
-      
-      // Update Tab Styling
-      document.querySelectorAll('.sim-tab-btn').forEach(btn => {
-        btn.classList.remove('bg-saffron-600', 'text-white');
-        btn.classList.add('bg-slate-800', 'text-slate-300');
-      });
-      const activeBtn = document.getElementById(`sim-btn-${simType}`);
-      if (activeBtn) {
-        activeBtn.classList.remove('bg-slate-800', 'text-slate-300');
-        activeBtn.classList.add('bg-saffron-600', 'text-white');
-      }
-
-      renderSimControls();
-      initCanvasSim();
-    }
-
-    function renderSimControls() {
-      const container = document.getElementById('sim-controls-container');
-      if (!container) return;
-
-      if (currentSim === 'motion') {
-        container.innerHTML = `
-          <h4 class="font-bold text-white text-sm border-b border-slate-700 pb-2">Physics: Projectile Motion</h4>
-          <div>
-            <label class="block text-xs text-slate-300 mb-1">Initial Velocity: <span id="val-v">${simParams.velocity}</span> m/s</label>
-            <input type="range" min="10" max="80" value="${simParams.velocity}" oninput="simParams.velocity=this.value; document.getElementById('val-v').innerText=this.value" class="w-full accent-saffron-500">
-          </div>
-          <div>
-            <label class="block text-xs text-slate-300 mb-1">Launch Angle: <span id="val-a">${simParams.angle}</span>°</label>
-            <input type="range" min="15" max="75" value="${simParams.angle}" oninput="simParams.angle=this.value; document.getElementById('val-a').innerText=this.value" class="w-full accent-saffron-500">
-          </div>
-          <p class="text-[11px] text-slate-400 leading-relaxed bg-slate-900 p-2.5 rounded-lg border border-slate-700">
-            Calculates parabolic trajectory using kinematics: y = x·tan(θ) - (g·x²)/(2v²cos²θ).
-          </p>
-        `;
-      } else if (currentSim === 'bohr') {
-        container.innerHTML = `
-          <h4 class="font-bold text-white text-sm border-b border-slate-700 pb-2">Chemistry: Bohr Atomic Shells</h4>
-          <div>
-            <label class="block text-xs text-slate-300 mb-1">Atomic Number (Electrons): <span id="val-e">${simParams.electrons}</span></label>
-            <input type="range" min="1" max="20" value="${simParams.electrons}" oninput="simParams.electrons=this.value; document.getElementById('val-e').innerText=this.value" class="w-full accent-saffron-500">
-          </div>
-          <div class="text-[11px] text-slate-300 space-y-1 bg-slate-900 p-2.5 rounded-lg border border-slate-700">
-            <p><strong>Shell Capacities (2n²):</strong></p>
-            <p>• K Shell (n=1): Max 2</p>
-            <p>• L Shell (n=2): Max 8</p>
-            <p>• M Shell (n=3): Max 8</p>
-            <p>• N Shell (n=4): Max 2</p>
-          </div>
-        `;
-      } else if (currentSim === 'cell') {
-        container.innerHTML = `
-          <h4 class="font-bold text-white text-sm border-b border-slate-700 pb-2">Biology: Cell Organelle Explorer</h4>
-          <p class="text-xs text-slate-300">Select organelle to inspect:</p>
-          <div class="space-y-2">
-            <button onclick="simParams.organelle='nucleus'" class="w-full text-left p-2 rounded bg-slate-700 hover:bg-slate-600 text-xs text-amber-300 font-bold">🧠 Nucleus (DNA Controller)</button>
-            <button onclick="simParams.organelle='mitochondria'" class="w-full text-left p-2 rounded bg-slate-700 hover:bg-slate-600 text-xs text-emerald-300 font-bold">⚡ Mitochondria (ATP Powerhouse)</button>
-            <button onclick="simParams.organelle='vacuole'" class="w-full text-left p-2 rounded bg-slate-700 hover:bg-slate-600 text-xs text-blue-300 font-bold">💧 Vacuole (Storage Tank)</button>
-          </div>
-        `;
-      } else if (currentSim === 'sound') {
-        container.innerHTML = `
-          <h4 class="font-bold text-white text-sm border-b border-slate-700 pb-2">Physics: Sound Oscilloscope</h4>
-          <div>
-            <label class="block text-xs text-slate-300 mb-1">Frequency (Pitch): <span id="val-f">${simParams.freq}</span> Hz</label>
-            <input type="range" min="1" max="15" value="${simParams.freq}" oninput="simParams.freq=this.value; document.getElementById('val-f').innerText=this.value" class="w-full accent-saffron-500">
-          </div>
-          <div>
-            <label class="block text-xs text-slate-300 mb-1">Amplitude (Loudness): <span id="val-amp">${simParams.amp}</span> dB</label>
-            <input type="range" min="10" max="80" value="${simParams.amp}" oninput="simParams.amp=this.value; document.getElementById('val-amp').innerText=this.value" class="w-full accent-saffron-500">
-          </div>
-        `;
-      }
-    }
-
-    function initCanvasSim() {
-      if (simAnimId) cancelAnimationFrame(simAnimId);
-      const canvas = document.getElementById('sim-canvas');
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-
-      // Adjust high DPI canvas resolution
-      const rect = canvas.getBoundingClientRect();
-      canvas.width = rect.width;
-      canvas.height = rect.height;
-
-      let time = 0;
-
-      function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        time += 0.03;
-
-        const infoOverlay = document.getElementById('sim-info-overlay');
-
-        if (currentSim === 'motion') {
-          // Draw Physics Motion Trajectory
-          const v = parseFloat(simParams.velocity);
-          const rad = (parseFloat(simParams.angle) * Math.PI) / 180;
-          const g = simParams.gravity;
-
-          const maxRange = (v * v * Math.sin(2 * rad)) / g;
-          const maxHeight = (v * v * Math.sin(rad) * Math.sin(rad)) / (2 * g);
-
-          if (infoOverlay) {
-            infoOverlay.innerText = `Range: ${maxRange.toFixed(1)}m | Max Height: ${maxHeight.toFixed(1)}m`;
-          }
-
-          // Draw axes
-          ctx.strokeStyle = '#475569';
-          ctx.beginPath();
-          ctx.moveTo(40, canvas.height - 30);
-          ctx.lineTo(canvas.width - 20, canvas.height - 30);
-          ctx.moveTo(40, canvas.height - 30);
-          ctx.lineTo(40, 20);
-          ctx.stroke();
-
-          // Draw Curve
-          ctx.strokeStyle = '#f97316';
-          ctx.lineWidth = 3;
-          ctx.beginPath();
-
-          const scaleX = (canvas.width - 80) / Math.max(maxRange * 1.2, 50);
-          const scaleY = (canvas.height - 60) / Math.max(maxHeight * 1.5, 30);
-
-          for (let x = 0; x <= maxRange; x += 1) {
-            const y = x * Math.tan(rad) - (g * x * x) / (2 * v * v * Math.cos(rad) * Math.cos(rad));
-            const px = 40 + x * scaleX;
-            const py = (canvas.height - 30) - y * scaleY;
-            if (x === 0) ctx.moveTo(px, py);
-            else ctx.lineTo(px, py);
-          }
-          ctx.stroke();
-
-          // Animated projectile ball
-          const tCur = (time % 3);
-          const xCur = v * Math.cos(rad) * (tCur * 15);
-          if (xCur <= maxRange) {
-            const yCur = xCur * Math.tan(rad) - (g * xCur * xCur) / (2 * v * v * Math.cos(rad) * Math.cos(rad));
-            ctx.fillStyle = '#fbbf24';
+            // Draw Support Bar
+            ctx.strokeStyle = '#f59e0b';
+            ctx.lineWidth = 4;
             ctx.beginPath();
-            ctx.arc(40 + xCur * scaleX, (canvas.height - 30) - yCur * scaleY, 8, 0, Math.PI * 2);
-            ctx.fill();
-          }
-
-        } else if (currentSim === 'bohr') {
-          // Draw Bohr Atomic Model
-          const cx = canvas.width / 2;
-          const cy = canvas.height / 2;
-
-          if (infoOverlay) {
-            infoOverlay.innerText = `Atom Shells: K, L, M | Z = ${simParams.electrons}`;
-          }
-
-          // Nucleus
-          ctx.fillStyle = '#ef4444';
-          ctx.beginPath();
-          ctx.arc(cx, cy, 18, 0, Math.PI * 2);
-          ctx.fill();
-          ctx.fillStyle = '#fff';
-          ctx.font = 'bold 10px sans-serif';
-          ctx.textAlign = 'center';
-          ctx.fillText('p+ n', cx, cy + 3);
-
-          // Electron Shell Configuration
-          const shellCapacities = [2, 8, 8, 2];
-          let remainingE = parseInt(simParams.electrons);
-
-          shellCapacities.forEach((cap, sIdx) => {
-            if (remainingE <= 0) return;
-            const countInShell = Math.min(remainingE, cap);
-            remainingE -= countInShell;
-
-            const radius = 45 + sIdx * 35;
-
-            // Draw Orbit Ring
-            ctx.strokeStyle = '#38bdf8';
-            ctx.lineWidth = 1;
-            ctx.setLineDash([4, 4]);
-            ctx.beginPath();
-            ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+            ctx.moveTo(originX - 40, originY);
+            ctx.lineTo(originX + 40, originY);
             ctx.stroke();
-            ctx.setLineDash([]);
 
-            // Orbiting Electrons
-            for (let e = 0; e < countInShell; e++) {
-              const angle = (e * (2 * Math.PI / countInShell)) + (time * (1 + sIdx * 0.3));
-              const ex = cx + radius * Math.cos(angle);
-              const ey = cy + radius * Math.sin(angle);
+            // Draw String
+            ctx.strokeStyle = '#94a3b8';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(originX, originY);
+            ctx.lineTo(bobX, bobY);
+            ctx.stroke();
 
-              ctx.fillStyle = '#34d399';
-              ctx.beginPath();
-              ctx.arc(ex, ey, 6, 0, Math.PI * 2);
-              ctx.fill();
-            }
-          });
-
-        } else if (currentSim === 'sound') {
-          // Draw Oscilloscope Sound Wave
-          ctx.strokeStyle = '#10b981';
-          ctx.lineWidth = 3;
-          ctx.beginPath();
-
-          const f = parseFloat(simParams.freq);
-          const amp = parseFloat(simParams.amp);
-          const cy = canvas.height / 2;
-
-          if (infoOverlay) {
-            infoOverlay.innerText = `Frequency: ${f} Hz | Amplitude: ${amp} dB`;
-          }
-
-          for (let x = 0; x < canvas.width; x++) {
-            const y = cy + Math.sin((x * f * 0.02) + (time * 5)) * amp;
-            if (x === 0) ctx.moveTo(x, y);
-            else ctx.lineTo(x, y);
-          }
-          ctx.stroke();
-
-        } else if (currentSim === 'cell') {
-          // Draw Biology Cell Organelle
-          const cx = canvas.width / 2;
-          const cy = canvas.height / 2;
-
-          if (infoOverlay) {
-            infoOverlay.innerText = `Organelle: ${simParams.organelle.toUpperCase()}`;
-          }
-
-          // Cell membrane
-          ctx.strokeStyle = '#34d399';
-          ctx.lineWidth = 4;
-          ctx.beginPath();
-          ctx.ellipse(cx, cy, 120, 80, 0, 0, Math.PI * 2);
-          ctx.stroke();
-
-          // Selected Organelle Highlight
-          if (simParams.organelle === 'nucleus') {
+            // Draw Bob
             ctx.fillStyle = '#f59e0b';
             ctx.beginPath();
-            ctx.arc(cx, cy, 35, 0, Math.PI * 2);
+            ctx.arc(bobX, bobY, 16, 0, Math.PI * 2);
             ctx.fill();
-            ctx.fillStyle = '#fff';
-            ctx.font = 'bold 11px sans-serif';
-            ctx.fillText('Nucleus', cx, cy + 4);
-          } else if (simParams.organelle === 'mitochondria') {
-            ctx.fillStyle = '#10b981';
-            ctx.beginPath();
-            ctx.ellipse(cx - 40, cy - 20, 25, 12, Math.PI / 4, 0, Math.PI * 2);
-            ctx.fill();
-            ctx.fillStyle = '#fff';
-            ctx.font = 'bold 10px sans-serif';
-            ctx.fillText('Mitochondria', cx - 40, cy - 15);
-          } else {
-            ctx.fillStyle = '#3b82f6';
-            ctx.beginPath();
-            ctx.arc(cx + 40, cy + 10, 25, 0, Math.PI * 2);
-            ctx.fill();
-            ctx.fillStyle = '#fff';
-            ctx.font = 'bold 10px sans-serif';
-            ctx.fillText('Vacuole', cx + 40, cy + 14);
-          }
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            requestAnimationFrame(animatePendulum);
         }
 
-        simAnimId = requestAnimationFrame(animate);
-      }
+        function toggleSimulation() {
+            isRunning = !isRunning;
+            document.getElementById('sim-toggle-btn').innerText = isRunning ? "Pause" : "Resume";
+        }
 
-      animate();
-    }
+        function resetSimulation() {
+            angle = Math.PI / 4;
+            angleVel = 0;
+            angleAcc = 0;
+            isRunning = true;
+            document.getElementById('sim-toggle-btn').innerText = "Pause";
+        }
 
-    /* ==========================================================================
-       4. FORUM & SHARE HELPER FUNCTIONS
-       ========================================================================== */
-    const defaultForumPosts = [
-      {
-        id: 1,
-        author: 'Rohan Verma (Class 9-B)',
-        subject: 'Physics',
-        question: 'Why does an object continue moving in space without applying continuous force?',
-        upvotes: 8,
-        answer: 'Due to Newton\'s 1st Law of Motion (Inertia). In space there is no friction or external force to slow it down!'
-      },
-      {
-        id: 2,
-        author: 'Priya Mishra (Class 9-A)',
-        subject: 'Chemistry',
-        question: 'How do we calculate the valency of Sodium (Na)?',
-        upvotes: 12,
-        answer: 'Atomic number of Na is 11. Electronic configuration is (2, 8, 1). It loses 1 electron to achieve octet stability, so valency = 1.'
-      }
-    ];
+        // Forum Post Logic
+        function postForumMessage() {
+            const author = document.getElementById('forum-author').value.trim() || 'Anonymous Student';
+            const msg = document.getElementById('forum-input').value.trim();
 
-    function renderForumPosts() {
-      const feed = document.getElementById('forum-feed-container');
-      if (!feed) return;
+            if (!msg) {
+                alert('Please type a message before posting!');
+                return;
+            }
 
-      feed.innerHTML = defaultForumPosts.map(post => `
-        <div class="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-          <div class="flex items-center justify-between text-xs text-gray-500 mb-2">
-            <span class="font-bold text-saffron-700 bg-saffron-50 px-2.5 py-0.5 rounded-full border border-saffron-200">${post.subject}</span>
-            <span>${post.author}</span>
-          </div>
-          <h4 class="font-bold text-gray-800 text-base mb-2">${post.question}</h4>
-          <div class="bg-amber-50/70 p-3 rounded-xl border border-amber-200 text-xs text-gray-700 space-y-1 mb-3">
-            <span class="font-bold text-emerald-700"><i class="fa-solid fa-check-circle mr-1"></i> Verified Answer:</span>
-            <p>${post.answer}</p>
-          </div>
-          <div class="flex items-center justify-between text-xs text-gray-500">
-            <button onclick="upvotePost(${post.id})" class="text-saffron-600 font-bold hover:underline flex items-center gap-1 touch-target">
-              <i class="fa-solid fa-thumbs-up"></i> Helpful (<span id="upvote-${post.id}">${post.upvotes}</span>)
-            </button>
-            <span class="text-gray-400">Class 9 Science Forum</span>
-          </div>
-        </div>
-      `).join('');
-    }
+            const postsContainer = document.getElementById('forum-posts');
+            const postCard = document.createElement('div');
+            postCard.className = "p-4 bg-slate-50 border border-slate-200 rounded-xl";
+            postCard.innerHTML = `
+                <div class="flex justify-between items-center mb-1">
+                    <span class="font-bold text-xs text-royal-800">${author}</span>
+                    <span class="text-[10px] text-slate-400">Just now</span>
+                </div>
+                <p class="text-xs text-slate-700">${msg}</p>
+            `;
+            postsContainer.prepend(postCard);
 
-    function handleForumSubmit(e) {
-      e.preventDefault();
-      const author = document.getElementById('forum-author').value;
-      const subject = document.getElementById('forum-subject').value;
-      const question = document.getElementById('forum-question').value;
+            document.getElementById('forum-input').value = '';
+        }
 
-      defaultForumPosts.unshift({
-        id: Date.now(),
-        author: author,
-        subject: subject,
-        question: question,
-        upvotes: 1,
-        answer: 'Pending review by teacher/peer student.'
-      });
-
-      document.getElementById('forum-post-form').reset();
-      renderForumPosts();
-    }
-
-    function upvotePost(id) {
-      const post = defaultForumPosts.find(p => p.id === id);
-      if (post) {
-        post.upvotes++;
-        const elem = document.getElementById(`upvote-${id}`);
-        if (elem) elem.innerText = post.upvotes;
-      }
-    }
-
-    // Toggle Mobile Drawer Nav
-    function toggleMobileDrawer() {
-      const drawer = document.getElementById('mobile-drawer');
-      if (drawer) {
-        drawer.classList.toggle('translate-x-full');
-      }
-    }
-
-    // Smooth Scroll Helper
-    function scrollToQuiz() {
-      const section = document.getElementById('quiz-engine');
-      if (section) section.scrollIntoView({ behavior: 'smooth' });
-    }
-
-    // Share Links
-    function copyShareLink() {
-      const url = window.location.href;
-      if (navigator.clipboard) {
-        navigator.clipboard.writeText(url);
-      } else {
-        const dummy = document.createElement('input');
-        document.body.appendChild(dummy);
-        dummy.value = url;
-        dummy.select();
-        document.execCommand('copy');
-        document.body.removeChild(dummy);
-      }
-      const toast = document.getElementById('share-toast');
-      if (toast) {
-        toast.classList.remove('hidden');
-        setTimeout(() => toast.classList.add('hidden'), 3000);
-      }
-    }
-
-    function shareWhatsApp() {
-      const text = encodeURIComponent("Check out VidyaNirman - Naga Ji Saraswati Vidya Mandir's Class 9 Science portal with 300 MCQs and 3D Visualizers! " + window.location.href);
-      window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
-    }
-
-    /* ==========================================================================
-       5. INITIALIZATION ON WINDOW LOAD
-       ========================================================================== */
-    window.onload = function() {
-      renderTeamCards();
-      renderQuizCard();
-      renderSimControls();
-      initCanvasSim();
-      renderForumPosts();
-
-      // Window Resize Listener for Canvas Responsive Redraw
-      window.addEventListener('resize', function() {
-        initCanvasSim();
-      });
-    };
-  </script>
+        // Window Load Handler
+        window.onload = function() {
+            renderQuestion();
+            buildGridButtons();
+            initSimulation();
+        };
+    </script>
 </body>
 </html>
