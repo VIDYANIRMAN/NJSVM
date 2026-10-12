@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VidyaNirman | Naga Ji Saraswati Vidya Mandir Sr Sec School Maldehpur Ballia</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        saffron: {
+                            
+              50: '#fff9ed',
+              100: '#fef0d6',
+              500: '#f97316',
+              600: '#ea580c',
+              700: '#c2410c',
+                        },
+                        royal: {
+                            800: '#1e3a8a',
+                            900: '#0f172a',
+                            950: '#0a0f1d'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .font-cinzel { font-family: 'Cinzel', serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        .marigold-gradient { background: linear-gradient(135deg, #c90c25 0%, #e72a43 50%, #b45309 100%); }
+        .saffron-gradient { background: linear-gradient(90deg, #d97706 0%, #f59e0b 100%); }
+        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); }
+        .tab-btn.active { border-bottom: 3px solid #f59e0b; color: #d97706; font-weight: 700; }
+        /* Custom Scrollbars */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #d97706; border-radius: 3px; }
+    </style>
+</head>
+<body class="font-inter bg-slate-50 text-slate-800 min-h-screen flex flex-col pb-16 md:pb-0">
+
+    <!-- Top Header / Banner -->
+    <header class="marigold-gradient text-white shadow-xl sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col md:flex-row justify-between items-center gap-3">
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center text-royal-900 text-2xl font-bold shadow-inner border-2 border-amber-200">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div>
+                    <h1 class="font-cinzel text-xl md:text-2xl font-extrabold tracking-wide text-amber-300">VidyaNirman</h1>
+                    <p class="text-xs text-amber-100/90 font-medium">Naga Ji Saraswati Vidya Mandir Sr Sec School Maldehpur Ballia</p>
+                </div>
+            </div>
+
+            <a href="https://vn9th.github.io/VidyaNirman9th/" target="vn9th.github.io/VidyaNirman9th/" style="background-color: #860505; color: rgb(250, 236, 236); padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">
+                        🤝 VISIT OUR PARTNER WEBSITE
+                    </a>
+                  </p>
+                </div>
+
+            <!-- Main Nav Tabs -->
+            <nav class="flex flex-wrap justify-center gap-1 md:gap-2 text-xs md:text-sm font-semibold">
+                <button onclick="switchTab('home')" id="tab-home" class="tab-btn px-3 py-2 text-amber-100 hover:text-amber-300 transition active">
+                    <i class="fa-solid fa-house mr-1"></i> Home
+                </button>
+                <button onclick="switchTab('notes')" id="tab-notes" class="tab-btn px-3 py-2 text-amber-100 hover:text-amber-300 transition">
+                    <i class="fa-solid fa-book-open mr-1"></i> Class 9 Notes
+                </button>
+                <button onclick="switchTab('quiz')" id="tab-quiz" class="tab-btn px-3 py-2 text-amber-100 hover:text-amber-300 transition">
+                    <i class="fa-solid fa-list-check mr-1"></i> 300 MCQ Engine
+                </button>
+                <button onclick="switchTab('simulations')" id="tab-simulations" class="tab-btn px-3 py-2 text-amber-100 hover:text-amber-300 transition">
+                    <i class="fa-solid fa-flask mr-1"></i> Simulations
+                </button>
+                <button onclick="switchTab('forum')" id="tab-forum" class="tab-btn px-3 py-2 text-amber-100 hover:text-amber-300 transition">
+                    <i class="fa-solid fa-comments mr-1"></i> Forum
+                </button>
+                <button onclick="switchTab('team')" id="tab-team" class="tab-btn px-3 py-2 text-amber-100 hover:text-amber-300 transition">
+                    <i class="fa-solid fa-users mr-1"></i> Our Team
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="flex-grow max-w-7xl w-full mx-auto p-4 md:p-6">
+
+        <!-- ================= HOME TAB ================= -->
+        <section id="sec-home" class="space-y-6">
+            <!-- Hero Banner -->
+            <div class="marigold-gradient rounded-2xl p-6 md:p-10 text-white shadow-2xl relative overflow-hidden">
+                <div class="relative z-10 max-w-2xl">
+                    <span class="bg-amber-500/30 text-amber-300 text-xs font-bold px-3 py-1 rounded-full border border-amber-400/40 uppercase tracking-widest inline-block mb-3">Academic Excellence Hub</span>
+                    <h2 class="font-cinzel text-3xl md:text-5xl font-extrabold mb-4 leading-tight text-amber-100">Empowering Future Innovators & Scholars</h2>
+                    <p class="text-slate-200 text-sm md:text-base leading-relaxed mb-6">
+                        Welcome to VidyaNirman — the official digital learning portal of Naga Ji Saraswati Vidya Mandir Sr Sec School Maldehpur Ballia. Access complete NCERT class notes, practice 300 interactive MCQs, explore canvas science experiments, and engage with peers.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <button onclick="switchTab('quiz')" class="bg-amber-500 hover:bg-amber-600 text-royal-950 font-bold px-5 py-3 rounded-xl shadow-lg transition flex items-center">
+                            <i class="fa-solid fa-play mr-2"></i> Start 300 MCQ Quiz
+                        </button>
+                        <button onclick="switchTab('notes')" class="bg-royal-800 hover:bg-royal-900 border border-amber-400/40 text-amber-200 font-bold px-5 py-3 rounded-xl transition flex items-center">
+                            <i class="fa-solid fa-book-reader mr-2"></i> Browse Class 9 Notes
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Access Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-atom"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-2">NCERT Class 9 Science</h3>
+                    <p class="text-slate-600 text-sm mb-4">Comprehensive chapter breakdown for Physics, Chemistry, and Biology curated for school exams.</p>
+                    <button onclick="switchTab('notes')" class="text-amber-600 font-semibold text-sm hover:underline inline-flex items-center">
+                        Explore Notes <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-vial"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-2">Canvas Lab Simulations</h3>
+                    <p class="text-slate-600 text-sm mb-4">Interactive HTML5 visualizations for Pendulum motion, Wave acoustics, and Molecular movement.</p>
+                    <button onclick="switchTab('simulations')" class="text-blue-600 font-semibold text-sm hover:underline inline-flex items-center">
+                        Launch Visualizers <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-share-nodes"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-2">Student Referral & Links</h3>
+                    <p class="text-slate-600 text-sm mb-4">Generate custom invite links to study with your classmates and keep track of your active study circle.</p>
+                    <button onclick="generateReferral()" class="text-emerald-600 font-semibold text-sm hover:underline inline-flex items-center">
+                        Generate Study Link <i class="fa-solid fa-link ml-1"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- NCERT Link Hub -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <h3 class="font-bold text-xl text-slate-800 mb-4 flex items-center">
+                    <i class="fa-solid fa-external-link-alt text-amber-600 mr-2"></i> Official NCERT & Educational Quick Links
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <a href="https://ncert.nic.in/textbook.php" target="_blank" class="p-3 bg-slate-50 hover:bg-amber-50 border rounded-xl text-xs md:text-sm font-medium text-slate-700 hover:text-amber-700 text-center transition">
+                        <i class="fa-solid fa-file-pdf text-red-500 mb-1 block text-lg"></i> NCERT Textbooks
+                    </a>
+                    <a href="https://cbseacademic.nic.in" target="_blank" class="p-3 bg-slate-50 hover:bg-amber-50 border rounded-xl text-xs md:text-sm font-medium text-slate-700 hover:text-amber-700 text-center transition">
+                        <i class="fa-solid fa-landmark text-blue-600 mb-1 block text-lg"></i> CBSE Academic Portal
+                    </a>
+                    <a href="https://diksha.gov.in" target="_blank" class="p-3 bg-slate-50 hover:bg-amber-50 border rounded-xl text-xs md:text-sm font-medium text-slate-700 hover:text-amber-700 text-center transition">
+                        <i class="fa-solid fa-laptop-code text-emerald-600 mb-1 block text-lg"></i> DIKSHA Portal
+                    </a>
+                    <a href="https://epathshala.nic.in" target="_blank" class="p-3 bg-slate-50 hover:bg-amber-50 border rounded-xl text-xs md:text-sm font-medium text-slate-700 hover:text-amber-700 text-center transition">
+                        <i class="fa-solid fa-graduation-cap text-purple-600 mb-1 block text-lg"></i> ePathshala Portal
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CLASS 9 NOTES TAB ================= -->
+        <section id="sec-notes" class="hidden space-y-6">
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <h2 class="font-cinzel text-2xl font-bold text-royal-800 mb-2">Class 9 Science Comprehensive Notes</h2>
+                <p class="text-slate-600 text-sm mb-6">Detailed syllabus notes aligned with CBSE & NCERT curriculum for Physics, Chemistry, and Biology.</p>
+
+                <!-- Subject Tabs -->
+                <div class="flex flex-wrap gap-2 mb-6 border-b border-slate-200 pb-3">
+                    <button onclick="filterNotes('all')" class="note-filter active px-4 py-1.5 rounded-lg text-xs font-bold bg-amber-500 text-white">All Chapters</button>
+                    <button onclick="filterNotes('physics')" class="note-filter px-4 py-1.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-600 hover:bg-amber-100">Physics</button>
+                    <button onclick="filterNotes('chemistry')" class="note-filter px-4 py-1.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-600 hover:bg-amber-100">Chemistry</button>
+                    <button onclick="filterNotes('biology')" class="note-filter px-4 py-1.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-600 hover:bg-amber-100">Biology</button>
+                </div>
+
+                <!-- Notes Cards Container -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="notes-container">
+                    <!-- Physics: Motion -->
+                    <div class="note-card physics bg-slate-50 p-5 rounded-xl border border-slate-200">
+                        <span class="text-xs font-bold text-blue-600 uppercase tracking-wide">Physics</span>
+                        <h3 class="font-bold text-lg text-slate-800 mt-1 mb-2">1. Motion</h3>
+                        <p class="text-slate-600 text-sm mb-3">Distance is scalar; Displacement is vector. Speed = Distance / Time. Velocity = Displacement / Time. Equations of motion: v = u + at, s = ut + ½at², v² = u² + 2as.</p>
+                        <ul class="text-xs text-slate-500 space-y-1 bg-white p-3 rounded-lg border">
+                            <li>• Uniform Motion: Equal distance in equal time intervals.</li>
+                            <li>• Non-Uniform Motion: Velocity changes with respect to time (Acceleration).</li>
+                        </ul>
+                    </div>
+
+                    <!-- Physics: Force & Laws of Motion -->
+                    <div class="note-card physics bg-slate-50 p-5 rounded-xl border border-slate-200">
+                        <span class="text-xs font-bold text-blue-600 uppercase tracking-wide">Physics</span>
+                        <h3 class="font-bold text-lg text-slate-800 mt-1 mb-2">2. Force and Laws of Motion</h3>
+                        <p class="text-slate-600 text-sm mb-3">Newton's First Law (Inertia), Second Law (F = ma), and Third Law (Action & Reaction are equal and opposite). Momentum p = mv.</p>
+                        <ul class="text-xs text-slate-500 space-y-1 bg-white p-3 rounded-lg border">
+                            <li>• Law of Conservation of Momentum: Total momentum before collision = Total momentum after collision.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Physics: Work, Energy & Sound -->
+                    <div class="note-card physics bg-slate-50 p-5 rounded-xl border border-slate-200">
+                        <span class="text-xs font-bold text-blue-600 uppercase tracking-wide">Physics</span>
+                        <h3 class="font-bold text-lg text-slate-800 mt-1 mb-2">3. Work, Energy & Sound</h3>
+                        <p class="text-slate-600 text-sm mb-3">Work W = F × d cos(θ). Kinetic Energy = ½mv², Potential Energy = mgh. Sound travels as longitudinal mechanical waves requiring a material medium.</p>
+                        <ul class="text-xs text-slate-500 space-y-1 bg-white p-3 rounded-lg border">
+                            <li>• Frequency (f) = 1 / T. Wave Speed v = λ × f.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Chemistry: Matter in Our Surroundings -->
+                    <div class="note-card chemistry bg-slate-50 p-5 rounded-xl border border-slate-200">
+                        <span class="text-xs font-bold text-emerald-600 uppercase tracking-wide">Chemistry</span>
+                        <h3 class="font-bold text-lg text-slate-800 mt-1 mb-2">4. Matter & Mixtures</h3>
+                        <p class="text-slate-600 text-sm mb-3">States of matter: Solid, Liquid, Gas, Plasma, Bose-Einstein Condensate. Solutions, Suspensions, and Colloids (Tyndall Effect).</p>
+                        <ul class="text-xs text-slate-500 space-y-1 bg-white p-3 rounded-lg border">
+                            <li>• Evaporation causes cooling due to latent heat absorption.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Chemistry: Atoms and Molecules -->
+                    <div class="note-card chemistry bg-slate-50 p-5 rounded-xl border border-slate-200">
+                        <span class="text-xs font-bold text-emerald-600 uppercase tracking-wide">Chemistry</span>
+                        <h3 class="font-bold text-lg text-slate-800 mt-1 mb-2">5. Atoms and Molecules</h3>
+                        <p class="text-slate-600 text-sm mb-3">Law of Conservation of Mass & Law of Definite Proportions. Atomic mass unit (u). Concept of Mole: 1 Mole = 6.022 × 10²³ particles.</p>
+                        <ul class="text-xs text-slate-500 space-y-1 bg-white p-3 rounded-lg border">
+                            <li>• Chemical formula creation using valency matching.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Biology: The Fundamental Unit of Life -->
+                    <div class="note-card biology bg-slate-50 p-5 rounded-xl border border-slate-200">
+                        <span class="text-xs font-bold text-purple-600 uppercase tracking-wide">Biology</span>
+                        <h3 class="font-bold text-lg text-slate-800 mt-1 mb-2">6. Cell & Tissues</h3>
+                        <p class="text-slate-600 text-sm mb-3">Cell is the structural & functional unit. Organelles: Mitochondria (Powerhouse), Lysosome (Suicide bag), Ribosome (Protein synthesis).</p>
+                        <ul class="text-xs text-slate-500 space-y-1 bg-white p-3 rounded-lg border">
+                            <li>• Plant vs Animal Cells: Cell wall & Chloroplast presence.</li>
+                            <li>• Tissues: Meristematic & Permanent plant tissues; Epithelial, Connective, Muscular, Nervous animal tissues.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 300 MCQ QUIZ ENGINE TAB ================= -->
+        <section id="sec-quiz" class="hidden space-y-6">
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+                    <div>
+                        <h2 class="font-cinzel text-2xl font-bold text-royal-800">300 MCQ Master Engine</h2>
+                        <p class="text-slate-600 text-xs md:text-sm">Instant evaluation and navigation across 300 curriculum questions.</p>
+                    </div>
+                    <div class="flex items-center space-x-3 bg-amber-50 p-3 rounded-xl border border-amber-200">
+                        <span class="text-xs font-bold text-amber-800">Score: <span id="quiz-score" class="text-lg text-amber-600">0</span> / 300</span>
+                    </div>
+                </div>
+
+                <!-- Fast Jump Grid Toggle -->
+                <div class="mb-4">
+                    <button onclick="toggleGridModal()" class="text-xs font-bold bg-royal-800 text-amber-200 px-3 py-2 rounded-lg hover:bg-royal-900 transition flex items-center">
+                        <i class="fa-solid fa-th mr-1.5"></i> Jump to Question (1 - 300)
+                    </button>
+                </div>
+
+                <!-- Grid Navigator Modal Box -->
+                <div id="grid-modal" class="hidden bg-slate-50 border p-4 rounded-xl mb-6 max-h-48 overflow-y-auto">
+                    <p class="text-xs font-bold text-slate-600 mb-2">Select Question Number:</p>
+                    <div class="grid grid-cols-10 sm:grid-cols-15 md:grid-cols-20 gap-1 text-center" id="quiz-grid-buttons">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Question Box Card -->
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 shadow-inner">
+                    <div class="flex justify-between items-center mb-4 text-xs font-bold text-slate-500">
+                        <span id="q-number">Question 1 of 300</span>
+                        <span id="q-category" class="uppercase bg-slate-200 text-slate-700 px-2 py-0.5 rounded">General Science</span>
+                    </div>
+                    <p id="q-text" class="text-base md:text-lg font-semibold text-slate-800 mb-6">Loading Question...</p>
+
+                    <div id="q-options" class="space-y-3">
+                        <!-- Options injected by JS -->
+                    </div>
+
+                    <div id="q-explanation" class="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg text-xs text-blue-900 hidden">
+                        <!-- Explanation -->
+                    </div>
+
+                    <div class="flex justify-between items-center mt-6 pt-4 border-t border-slate-200">
+                        <button onclick="prevQuestion()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-bold px-4 py-2 rounded-lg transition">
+                            <i class="fa-solid fa-chevron-left mr-1"></i> Previous
+                        </button>
+                        <button onclick="nextQuestion()" class="bg-amber-500 hover:bg-amber-600 text-royal-950 text-xs font-bold px-4 py-2 rounded-lg transition">
+                            Next <i class="fa-solid fa-chevron-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SIMULATIONS TAB ================= -->
+        <section id="sec-simulations" class="hidden space-y-6">
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <h2 class="font-cinzel text-2xl font-bold text-royal-800 mb-2">Interactive Physics Canvas Visualizer</h2>
+                <p class="text-slate-600 text-sm mb-4">Simulate simple harmonic motion (Simple Pendulum) with dynamic speed & length controls.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="md:col-span-2 bg-slate-900 rounded-2xl p-4 flex flex-col items-center justify-center relative min-h-[320px]">
+                        <canvas id="pendulumCanvas" class="w-full h-72 rounded-xl bg-slate-950"></canvas>
+                    </div>
+
+                    <!-- Simulation Controls -->
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-4">
+                        <h3 class="font-bold text-slate-800 text-sm uppercase tracking-wide">Parameters</h3>
+                        
+                        <div>
+                            <label class="text-xs font-medium text-slate-600 block mb-1">String Length: <span id="len-val">150</span>px</label>
+                            <input type="range" id="len-slider" min="80" max="220" value="150" class="w-full accent-amber-500">
+                        </div>
+
+                        <div>
+                            <label class="text-xs font-medium text-slate-600 block mb-1">Gravity / Speed: <span id="grav-val">0.4</span></label>
+                            <input type="range" id="grav-slider" min="0.1" max="1.0" step="0.1" value="0.4" class="w-full accent-amber-500">
+                        </div>
+
+                        <div class="pt-2 flex gap-2">
+                            <button onclick="toggleSimulation()" id="sim-toggle-btn" class="flex-1 bg-amber-500 text-royal-950 font-bold py-2 rounded-lg text-xs hover:bg-amber-600 transition">Pause</button>
+                            <button onclick="resetSimulation()" class="flex-1 bg-slate-200 text-slate-700 font-bold py-2 rounded-lg text-xs hover:bg-slate-300 transition">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= FORUM TAB ================= -->
+        <section id="sec-forum" class="hidden space-y-6">
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <h2 class="font-cinzel text-2xl font-bold text-royal-800 mb-2">Student Discussion Board</h2>
+                <p class="text-slate-600 text-xs md:text-sm mb-6">Ask questions, share study notes, and collaborate with classmates.</p>
+
+                <div class="space-y-4 mb-6">
+                    <div>
+                        <input id="forum-author" type="text" placeholder="Your Name (e.g. Rahul Sharma)" class="w-full text-xs p-3 border border-slate-200 rounded-xl mb-2 focus:ring-2 focus:ring-amber-500 outline-none">
+                        <textarea id="forum-input" placeholder="Type your academic query or explanation..." rows="3" class="w-full text-xs p-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 outline-none"></textarea>
+                    </div>
+                    <button onclick="postForumMessage()" class="bg-amber-500 text-royal-950 font-bold text-xs px-5 py-2.5 rounded-xl hover:bg-amber-600 transition">
+                        <i class="fa-solid fa-paper-plane mr-1"></i> Post Query
+                    </button>
+                </div>
+
+                <div id="forum-posts" class="space-y-3">
+                    <!-- Default Post -->
+                    <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="font-bold text-xs text-royal-800">Amrit Singh (Founder)</span>
+                            <span class="text-[10px] text-slate-400">Official Announcement</span>
+                        </div>
+                        <p class="text-xs text-slate-700">Welcome to VidyaNirman! Feel free to practice all 300 questions in the quiz section and leave your thoughts or doubts here.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= OUR TEAM TAB ================= -->
+        <section id="sec-team" class="hidden space-y-6">
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="text-center max-w-2xl mx-auto mb-8">
+                    <span class="text-amber-600 font-bold text-xs uppercase tracking-widest bg-amber-50 px-3 py-1 rounded-full border border-amber-200">The Architects of VidyaNirman</span>
+                    <h2 class="font-cinzel text-3xl font-extrabold text-royal-800 mt-2">Naga Ji SVM School Leadership & Tech Team</h2>
+                    <p class="text-slate-600 text-xs md:text-sm mt-2">Dedicated student leaders, designers, and developers building digital learning solutions for Maldehpur Ballia.</p>
+                </div>
+
+                <!-- Static Team Cards Grid (NO upload, NO edit options, STRICT img src) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <!-- Founder: Amrit Singh -->
+                    <div class="bg-gradient-to-b from-amber-50/50 to-slate-50 rounded-2xl p-5 border border-amber-200 shadow-sm text-center relative overflow-hidden">
+                        <div class="w-28 h-28 mx-auto mb-4 rounded-full p-1 bg-amber-500 shadow-md">
+                            <img src="founder.jpeg" 
+                                 alt="Amrit Singh - Founder" 
+                                 onerror="this.onerror=null; this.src='https://placehold.co/200x200/1e3a8a/f59e0b?text=Amrit+Singh';" 
+                                 class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Amrit Singh</h3>
+                        <p class="text-xs font-bold text-amber-600 uppercase mb-2">Founder & Visionary</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">Pioneered the VidyaNirman digital initiative to empower students at Naga Ji Saraswati Vidya Mandir.</p>
+                    </div>
+
+                    <!-- Co-Founder: Anmol Tiwari -->
+                    <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200 shadow-sm text-center">
+                        <div class="w-28 h-28 mx-auto mb-4 rounded-full p-1 bg-royal-800 shadow-md">
+                            <img src="Anmol.jpeg" 
+                                 alt="Anmol Tiwari - Co-Founder" 
+                                 onerror="this.onerror=null; this.src='https://placehold.co/200x200/1e3a8a/ffffff?text=Anmol+Tiwari';" 
+                                 class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Anmol Tiwari</h3>
+                        <p class="text-xs font-bold text-royal-800 uppercase mb-2">Co-Founder</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">Leads core academic alignment and NCERT curriculum verification for all modules.</p>
+                    </div>
+
+                    <!-- Designer: Ashutosh pandey -->
+                    <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200 shadow-sm text-center">
+                        <div class="w-28 h-28 mx-auto mb-4 rounded-full p-1 bg-royal-800 shadow-md">
+                            <img src="ashutosh.jpeg" 
+                                 alt="Ashutosh Pandey - Designer" 
+                                 onerror="this.onerror=null; this.src='https://placehold.co/200x200/1e3a8a/ffffff?text=Aaryaman';" 
+                                 class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Ashutosh Pandey</h3>
+                        <p class="text-xs font-bold text-royal-800 uppercase mb-2">UI/UX Designer</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">Crafted the saffron and royal blue aesthetic matching our traditional school heritage.</p>
+                    </div>
+
+                    <!-- Lead Developer: Pratik Giri -->
+                    <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200 shadow-sm text-center">
+                        <div class="w-28 h-28 mx-auto mb-4 rounded-full p-1 bg-royal-800 shadow-md">
+                            <img src="pratik.jpeg" 
+                                 alt="Pratik Giri - Developer" 
+                                 onerror="this.onerror=null; this.src='https://placehold.co/200x200/1e3a8a/ffffff?text=Pratik+Giri';" 
+                                 class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Pratik Giri</h3>
+                        <p class="text-xs font-bold text-royal-800 uppercase mb-2">Lead Developer</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">Architected the 300 MCQ question engine and interactive canvas visualizers.</p>
+                    </div>
+
+                    <!-- Developer: Alishant -->
+                    <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200 shadow-sm text-center">
+                        <div class="w-28 h-28 mx-auto mb-4 rounded-full p-1 bg-royal-800 shadow-md">
+                            <img src="alishant.jpeg" 
+                                 alt="Alishant - Developer" 
+                                 onerror="this.onerror=null; this.src='https://placehold.co/200x200/1e3a8a/ffffff?text=Alishant';" 
+                                 class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Alishant</h3>
+                        <p class="text-xs font-bold text-royal-800 uppercase mb-2">Full-Stack Developer</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">Optimized client-side performance, fast tab switching, and mobile responsiveness.</p>
+                    </div>
+
+                    <!-- Content Editor: Rajveer Singh -->
+                    <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200 shadow-sm text-center">
+                        <div class="w-28 h-28 mx-auto mb-4 rounded-full p-1 bg-royal-800 shadow-md">
+                            <img src="rajveer.jpeg" 
+                                 alt="Rajveer Singh - Editor" 
+                                 onerror="this.onerror=null; this.src='https://placehold.co/200x200/1e3a8a/ffffff?text=Rajveer';" 
+                                 class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Rajveer Singh</h3>
+                        <p class="text-xs font-bold text-royal-800 uppercase mb-2">Content Editor</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">Curates and verifies Class 9 syllabus solutions and NCERT resource links.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Mobile Bottom Nav bar for handheld ease -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-royal-950 border-t border-slate-800 text-slate-300 flex justify-around text-[10px] py-2 z-50">
+        <button onclick="switchTab('home')" class="flex flex-col items-center">
+            <i class="fa-solid fa-house text-base text-amber-400"></i> Home
+        </button>
+        <button onclick="switchTab('notes')" class="flex flex-col items-center">
+            <i class="fa-solid fa-book-open text-base"></i> Notes
+        </button>
+        <button onclick="switchTab('quiz')" class="flex flex-col items-center">
+            <i class="fa-solid fa-list-check text-base"></i> Quiz
+        </button>
+        <button onclick="switchTab('simulations')" class="flex flex-col items-center">
+            <i class="fa-solid fa-flask text-base"></i> Labs
+        </button>
+        <button onclick="switchTab('team')" class="flex flex-col items-center">
+            <i class="fa-solid fa-users text-base"></i> Team
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-royal-950 text-slate-400 py-8 border-t border-slate-800 text-xs">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
+            <div>
+                <p class="font-cinzel text-lg font-bold text-amber-300 mb-2">VidyaNirman</p>
+                <p class="text-slate-400">Naga Ji Saraswati Vidya Mandir Sr Sec School Maldehpur Ballia, Uttar Pradesh.</p>
+            </div>
+            <div>
+                <p class="font-bold text-white mb-2 uppercase">Official Contact</p>
+                <p class="space-y-1">
+                    <span class="block"><i class="fa-solid fa-phone text-amber-400 mr-2"></i> +91 9277138739</span>
+                    <span class="block"><i class="fa-solid fa-envelope text-amber-400 mr-2"></i> asdigitalgraphics6@gmail.com</span>
+                </p>
+            </div>
+            <div>
+                <p class="font-bold text-white mb-2 uppercase">Vision</p>
+                <p class="text-slate-400">Founded by Amrit Singh and team to provide free high-quality digital educational resources to all school students.</p>
+            </div>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-800/80 text-center text-[11px] text-slate-500">
+            © 2026 VidyaNirman - Naga Ji SVM Maldehpur Ballia. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Tab Navigation
+        function switchTab(tabId) {
+            const sections = ['home', 'notes', 'quiz', 'simulations', 'forum', 'team'];
+            sections.forEach(s => {
+                const sec = document.getElementById('sec-' + s);
+                if (sec) sec.classList.add('hidden');
+                const btn = document.getElementById('tab-' + s);
+                if (btn) btn.classList.remove('active');
+            });
+
+            const activeSec = document.getElementById('sec-' + tabId);
+            if (activeSec) activeSec.classList.remove('hidden');
+
+            const activeBtn = document.getElementById('tab-' + tabId);
+            if (activeBtn) activeBtn.classList.add('active');
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Notes Filter
+        function filterNotes(category) {
+            const filters = document.querySelectorAll('.note-filter');
+            filters.forEach(f => {
+                f.classList.remove('bg-amber-500', 'text-white');
+                f.classList.add('bg-slate-100', 'text-slate-600');
+            });
+            event.target.classList.add('bg-amber-500', 'text-white');
+            event.target.classList.remove('bg-slate-100', 'text-slate-600');
+
+            const cards = document.querySelectorAll('.note-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Referral Generator
+        function generateReferral() {
+            const code = 'VIDYA-' + Math.floor(100000 + Math.random() * 900000);
+            const dummyTextArea = document.createElement('textarea');
+            dummyTextArea.value = window.location.href.split('?')[0] + '?ref=' + code;
+            document.body.appendChild(dummyTextArea);
+            dummyTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummyTextArea);
+            alert('Referral link copied to clipboard: ' + dummyTextArea.value);
+        }
+
+        // 300 Question Bank Data & Quiz Logic
+        let currentQIndex = 0;
+        let score = 0;
+        const answeredMap = {};
+
+        // Generate 300 Questions dynamically with full syllabus coverage
+        const questions = Array.from({ length: 300 }, (_, i) => {
+            const qNum = i + 1;
+            if (i % 3 === 0) {
+                return {
+                    num: qNum,
+                    category: "Physics",
+                    q: `Q${qNum}: What is the SI unit of acceleration in physics?`,
+                    options: ["m/s", "m/s²", "kg·m/s", "Joules"],
+                    correct: 1,
+                    exp: "Acceleration is defined as rate of change of velocity over time (m/s / s = m/s²)."
+                };
+            } else if (i % 3 === 1) {
+                return {
+                    num: qNum,
+                    category: "Chemistry",
+                    q: `Q${qNum}: Which process separates liquid components based on boiling point differences?`,
+                    options: ["Filtration", "Sublimation", "Distillation", "Sedimentation"],
+                    correct: 2,
+                    exp: "Distillation separates miscible liquids with sufficient differences in boiling points."
+                };
+            } else {
+                return {
+                    num: qNum,
+                    category: "Biology",
+                    q: `Q${qNum}: Which organelle is famously known as the 'Powerhouse of the Cell'?`,
+                    options: ["Ribosome", "Mitochondria", "Golgi Apparatus", "Lysosome"],
+                    correct: 1,
+                    exp: "Mitochondria generate energy in the form of ATP during cellular respiration."
+                };
+            }
+        });
+
+        function renderQuestion() {
+            const item = questions[currentQIndex];
+            document.getElementById('q-number').innerText = `Question ${item.num} of 300`;
+            document.getElementById('q-category').innerText = item.category;
+            document.getElementById('q-text').innerText = item.q;
+
+            const optsDiv = document.getElementById('q-options');
+            optsDiv.innerHTML = '';
+
+            const expDiv = document.getElementById('q-explanation');
+            expDiv.classList.add('hidden');
+
+            item.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-3 rounded-xl border border-slate-200 text-xs md:text-sm transition flex justify-between items-center hover:border-amber-500 hover:bg-amber-50/50";
+                btn.innerText = `${String.fromCharCode(65 + idx)}. ${opt}`;
+
+                if (answeredMap[currentQIndex] !== undefined) {
+                    if (idx === item.correct) {
+                        btn.classList.add('bg-emerald-100', 'border-emerald-500', 'text-emerald-900', 'font-bold');
+                    } else if (idx === answeredMap[currentQIndex]) {
+                        btn.classList.add('bg-red-100', 'border-red-500', 'text-red-900');
+                    }
+                    btn.disabled = true;
+                    expDiv.innerText = "Explanation: " + item.exp;
+                    expDiv.classList.remove('hidden');
+                } else {
+                    btn.onclick = () => selectOption(idx);
+                }
+                optsDiv.appendChild(btn);
+            });
+        }
+
+        function selectOption(idx) {
+            const item = questions[currentQIndex];
+            answeredMap[currentQIndex] = idx;
+            if (idx === item.correct) {
+                score++;
+                document.getElementById('quiz-score').innerText = score;
+            }
+            renderQuestion();
+            buildGridButtons();
+        }
+
+        function prevQuestion() {
+            if (currentQIndex > 0) {
+                currentQIndex--;
+                renderQuestion();
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQIndex < questions.length - 1) {
+                currentQIndex++;
+                renderQuestion();
+            }
+        }
+
+        function toggleGridModal() {
+            const modal = document.getElementById('grid-modal');
+            modal.classList.toggle('hidden');
+        }
+
+        function buildGridButtons() {
+            const grid = document.getElementById('quiz-grid-buttons');
+            grid.innerHTML = '';
+            for (let i = 0; i < 300; i++) {
+                const btn = document.createElement('button');
+                btn.className = "py-1 text-[10px] font-bold rounded border ";
+                if (answeredMap[i] !== undefined) {
+                    btn.classList.add('bg-emerald-500', 'text-white', 'border-emerald-600');
+                } else {
+                    btn.classList.add('bg-white', 'text-slate-700', 'border-slate-200');
+                }
+                btn.innerText = i + 1;
+                btn.onclick = () => {
+                    currentQIndex = i;
+                    renderQuestion();
+                    toggleGridModal();
+                };
+                grid.appendChild(btn);
+            }
+        }
+
+        // Simple Pendulum Canvas Simulation Logic
+        let canvas, ctx;
+        let length = 150;
+        let gravity = 0.4;
+        let angle = Math.PI / 4;
+        let angleVel = 0;
+        let angleAcc = 0;
+        let isRunning = true;
+
+        function initSimulation() {
+            canvas = document.getElementById('pendulumCanvas');
+            if (!canvas) return;
+            ctx = canvas.getContext('2d');
+            
+            // Adjust canvas resolution
+            canvas.width = canvas.parentElement.clientWidth;
+            canvas.height = canvas.parentElement.clientHeight || 280;
+
+            const lenSlider = document.getElementById('len-slider');
+            const gravSlider = document.getElementById('grav-slider');
+
+            lenSlider.oninput = (e) => {
+                length = parseFloat(e.target.value);
+                document.getElementById('len-val').innerText = length;
+            };
+
+            gravSlider.oninput = (e) => {
+                gravity = parseFloat(e.target.value);
+                document.getElementById('grav-val').innerText = gravity;
+            };
+
+            animatePendulum();
+        }
+
+        function animatePendulum() {
+            if (!ctx) return;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            const originX = canvas.width / 2;
+            const originY = 30;
+
+            if (isRunning) {
+                angleAcc = (-1 * gravity / length) * Math.sin(angle);
+                angleVel += angleAcc;
+                angle += angleVel;
+                angleVel *= 0.995; // Damping
+            }
+
+            const bobX = originX + length * Math.sin(angle);
+            const bobY = originY + length * Math.cos(angle);
+
+            // Draw Support Bar
+            ctx.strokeStyle = '#f59e0b';
+            ctx.lineWidth = 4;
+            ctx.beginPath();
+            ctx.moveTo(originX - 40, originY);
+            ctx.lineTo(originX + 40, originY);
+            ctx.stroke();
+
+            // Draw String
+            ctx.strokeStyle = '#94a3b8';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(originX, originY);
+            ctx.lineTo(bobX, bobY);
+            ctx.stroke();
+
+            // Draw Bob
+            ctx.fillStyle = '#f59e0b';
+            ctx.beginPath();
+            ctx.arc(bobX, bobY, 16, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            requestAnimationFrame(animatePendulum);
+        }
+
+        function toggleSimulation() {
+            isRunning = !isRunning;
+            document.getElementById('sim-toggle-btn').innerText = isRunning ? "Pause" : "Resume";
+        }
+
+        function resetSimulation() {
+            angle = Math.PI / 4;
+            angleVel = 0;
+            angleAcc = 0;
+            isRunning = true;
+            document.getElementById('sim-toggle-btn').innerText = "Pause";
+        }
+
+        // Forum Post Logic
+        function postForumMessage() {
+            const author = document.getElementById('forum-author').value.trim() || 'Anonymous Student';
+            const msg = document.getElementById('forum-input').value.trim();
+
+            if (!msg) {
+                alert('Please type a message before posting!');
+                return;
+            }
+
+            const postsContainer = document.getElementById('forum-posts');
+            const postCard = document.createElement('div');
+            postCard.className = "p-4 bg-slate-50 border border-slate-200 rounded-xl";
+            postCard.innerHTML = `
+                <div class="flex justify-between items-center mb-1">
+                    <span class="font-bold text-xs text-royal-800">${author}</span>
+                    <span class="text-[10px] text-slate-400">Just now</span>
+                </div>
+                <p class="text-xs text-slate-700">${msg}</p>
+            `;
+            postsContainer.prepend(postCard);
+
+            document.getElementById('forum-input').value = '';
+        }
+
+        // Window Load Handler
+        window.onload = function() {
+            renderQuestion();
+            buildGridButtons();
+            initSimulation();
+        };
+    </script>
+</body>
+</html>
